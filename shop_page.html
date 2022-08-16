@@ -9,7 +9,141 @@
             padding: 0;
             box-sizing: border-box;
         }
+        .logo {
+            padding-right: 600px;
+            font-size: 3em;
+            color: white;
+            font-family: 'Shadows Into Light', cursive;
+        }
+        header{
+            display: flex;
+            background-color: white;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navigation{
+            width: 100%;
+            height: 60px;
+            background: #556b2f;
+            position: relative;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            padding-top: 5px;
+            padding-bottom: 10px;
+        }
 
+        .navigation ul {
+            display: flex;
+            width: 500px;
+           
+        }
+        .navigation ul li{
+            position: relative;
+            list-style: none;
+            width: 70px;
+            height: 50px;
+            z-index: 1;
+        }
+        .navigation ul li a{
+            position: relative;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            font-weight: 500;
+
+        }
+        .navigation ul li a .icon{
+            position: relative;
+            display: block;
+            line-height: 75px;
+            font-size: 1.5em;
+            text-align: center;
+            transition: 0.5s;
+            color:beige;
+        }
+        .navigation ul li.active a .icon {
+            transform: translateY(-20px);
+        }
+        .navigation ul li a .text {
+            position: absolute;
+            color:beige;
+            font-weight: 400;
+            font-size: 0.75em;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        .navigation ul li:hover a .text{
+            opacity: 1;
+        }
+        .navigation ul li.active a .text{
+            opacity: 1;
+            transform: translateY(5px);
+
+        }
+        .indicator {
+            position: absolute;
+            top: 0%;
+            width: 70px;
+            height: 60px;
+            background: #bdb76b;
+            border-radius: 50%;
+            transition: 0.5s;
+        }
+
+            .indicator::before {
+                content: '';
+                position: absolute;
+                top: 0%;
+                left: -22px;
+                width: 20px;
+                height: 20px;
+                background: transparent;
+            }
+
+            .indicator::after {
+                content: '';
+                position: absolute;
+                top: 0%;
+                right: -22px;
+                width: 20px;
+                height: 20px;
+                background: transparent;
+            }
+
+        .navigation ul li:nth-child(1).active ~ .indicator {
+            transform: translateX(calc(1px * -0));
+        }
+
+        .navigation ul li:nth-child(2).active ~ .indicator {
+            transform: translateX(calc(70px * 1));
+        }
+
+        .navigation ul li:nth-child(3).active ~ .indicator {
+            transform: translateX(calc(70px * 2));
+        }
+
+        .navigation ul li:nth-child(4).active ~ .indicator {
+            transform: translateX(calc(70px * 3));
+        }
+
+        .navigation ul li:nth-child(5).active ~ .indicator {
+            transform: translateX(calc(70px * 4));
+        }
+
+        .navigation ul li:nth-child(6).active ~ .indicator {
+            transform: translateX(calc(70px * 5));
+        }
+
+        .navigation ul li:nth-child(7).active ~ .indicator {
+            transform: translateX(calc(70px * 6));
+        }
         body {
             width: 100%;
             
@@ -150,11 +284,77 @@
     </style>
 </head>
 <body>
+
+    <!--header-->
+    <header>
+        <div class="navigation">
+            <div class="logo"><img src="logo.svg" alt="">E-Lib</div>
+            <ul>
+                <li class="list active">
+                    <a href="home.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="shop_page.html">
+                        <span class="icon">
+                            <ion-icon name="bag-outline"></ion-icon>
+                        </span>
+                        <span class="text">Shop</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                        </span>
+                        <span class="text">Events</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="information-circle-outline"></ion-icon>
+                        </span>
+                        <span class="text">About</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="call-outline"></ion-icon>
+                        </span>
+                        <span class="text">Contact us</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="text">Log in / Sign up</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="text">Cart</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+    </header>
     <section id="shop">
         <div id="shop-header">
             <h1>SHOP NOW</h1>
             <p style="color:cornsilk">
-                "I donít have to look far to find treasures. I discover them every time I visit a library."
+                "I don‚Äôt have to look far to find treasures. I discover them every time I visit a library."
                 - Michael Embry
             </p>
         </div>
@@ -173,7 +373,7 @@
             </div>
         </div>
 
-        
+
 
         <!--books -->
         <div id="books">
@@ -221,7 +421,7 @@
                                 <h4>It Ends With Us</h4>
                                 <span>Novel by Collen Hoover</span>
                             </header>
-                            <p>In this ìbrave and heartbreaking novel that digs its claws into you and doesnít let go, long after youíve finished itî (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance canít stop thinking about her first love.</p>
+                            <p>In this ‚Äúbrave and heartbreaking novel that digs its claws into you and doesn‚Äôt let go, long after you‚Äôve finished it‚Äù (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can‚Äôt stop thinking about her first love.</p>
                             <h5>110EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -271,7 +471,7 @@
                                 <h4>The Spanish Love Deception</h4>
                                 <span>Novel by Elena Armas</span>
                             </header>
-                            <p>A TikTok sensation, this rom-com about a young woman who agrees to fake date a colleague and bring him to her sisterís wedding has ìeverything you could want in a romanceî (Helen Hoang, New York Times bestselling author).</p>
+                            <p>A TikTok sensation, this rom-com about a young woman who agrees to fake date a colleague and bring him to her sister‚Äôs wedding has ‚Äúeverything you could want in a romance‚Äù (Helen Hoang, New York Times bestselling author).</p>
                             <h5>75EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -299,7 +499,7 @@
                                 <h4>Book Lovers</h4>
                                 <span>Book by Emily Henry</span>
                             </header>
-                            <p>ìBook Lovers is the perfect title for this utterly romantic read featuring two book industry insiders with crackling chemistry. Heartfelt, funny, and full of joy, Emily Henryís latest is packed with surprising twists and turns that keep you rooting for Nora and Charlie, every step of the way. (Also, three cheers for Noraís super-relatable bangs journey!)î</p>
+                            <p>‚ÄúBook Lovers is the perfect title for this utterly romantic read featuring two book industry insiders with crackling chemistry. Heartfelt, funny, and full of joy, Emily Henry‚Äôs latest is packed with surprising twists and turns that keep you rooting for Nora and Charlie, every step of the way. (Also, three cheers for Nora‚Äôs super-relatable bangs journey!)‚Äù</p>
                             <h5>50EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -354,7 +554,7 @@
                                     Book by Stephen Covey
                                 </span>
                             </header>
-                            <p>A TikTok sensation, this rom-com about a young woman who agrees to fake date a colleague and bring him to her sisterís wedding has ìeverything you could want in a romanceî (Helen Hoang, New York Times bestselling author).</p>
+                            <p>A TikTok sensation, this rom-com about a young woman who agrees to fake date a colleague and bring him to her sister‚Äôs wedding has ‚Äúeverything you could want in a romance‚Äù (Helen Hoang, New York Times bestselling author).</p>
                             <h5>75EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -382,7 +582,7 @@
                                 <h4>The 4-Hour Workweek</h4>
                                 <span> Book by Tim Ferriss</span>
                             </header>
-                            <p>ìBook Lovers is the perfect title for this utterly romantic read featuring two book industry insiders with crackling chemistry. Heartfelt, funny, and full of joy, Emily Henryís latest is packed with surprising twists and turns that keep you rooting for Nora and Charlie, every step of the way. (Also, three cheers for Noraís super-relatable bangs journey!)î</p>
+                            <p>‚ÄúBook Lovers is the perfect title for this utterly romantic read featuring two book industry insiders with crackling chemistry. Heartfelt, funny, and full of joy, Emily Henry‚Äôs latest is packed with surprising twists and turns that keep you rooting for Nora and Charlie, every step of the way. (Also, three cheers for Nora‚Äôs super-relatable bangs journey!)‚Äù</p>
                             <h5>50EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -529,7 +729,7 @@
                                 <h4>It Ends With Us</h4>
                                 <span>Novel by Collen Hoover</span>
                             </header>
-                            <p>In this ìbrave and heartbreaking novel that digs its claws into you and doesnít let go, long after youíve finished itî (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance canít stop thinking about her first love.</p>
+                            <p>In this ‚Äúbrave and heartbreaking novel that digs its claws into you and doesn‚Äôt let go, long after you‚Äôve finished it‚Äù (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can‚Äôt stop thinking about her first love.</p>
                             <h5>110EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -594,7 +794,7 @@
                                 <h4>It Ends With Us</h4>
                                 <span>Novel by Collen Hoover</span>
                             </header>
-                            <p>In this ìbrave and heartbreaking novel that digs its claws into you and doesnít let go, long after youíve finished itî (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance canít stop thinking about her first love.</p>
+                            <p>In this ‚Äúbrave and heartbreaking novel that digs its claws into you and doesn‚Äôt let go, long after you‚Äôve finished it‚Äù (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can‚Äôt stop thinking about her first love.</p>
                             <h5>110EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -674,7 +874,7 @@
                                 <h4>It Ends With Us</h4>
                                 <span>Novel by Collen Hoover</span>
                             </header>
-                            <p>In this ìbrave and heartbreaking novel that digs its claws into you and doesnít let go, long after youíve finished itî (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance canít stop thinking about her first love.</p>
+                            <p>In this ‚Äúbrave and heartbreaking novel that digs its claws into you and doesn‚Äôt let go, long after you‚Äôve finished it‚Äù (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can‚Äôt stop thinking about her first love.</p>
                             <h5>110EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -704,5 +904,20 @@
 
         }
     </script>
+
+    <!--header script-->
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach((item) => item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) => item.addEventListener('click', activeLink));
+        function imgSlider(anything) {
+            document.getElementById("slider").src = anything;
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

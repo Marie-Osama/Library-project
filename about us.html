@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title> shop </title>
+    <title> About </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <meta rel="stylesheet" type="text/css" href="css/style.css">
     <style>
-
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Red+Hat+Display:wght@300&family=Shadows+Into+Light&display=swap');
         * {
             margin: 0px;
             padding: 0px;
@@ -15,11 +16,142 @@
             font-family: 'Poppins', sans-serif;
             
         }
+        .logo {
+            padding-right: 600px;
+            font-size: 3em;
+            color: rgb(150,62,81);
+            font-family: 'Shadows Into Light', cursive;
+        }
+        header{
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            background-color: white;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navigation{
+            width: 100%;
+            height: 60px;
+            background: white;
+            position: relative;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            padding-top: 5px;
+            padding-bottom: 10px;
+        }
 
+        .navigation ul {
+            display: flex;
+            width: 500px;
+           
+        }
+        .navigation ul li{
+            position: relative;
+            list-style: none;
+            width: 70px;
+            height: 50px;
+            z-index: 1;
+        }
+        .navigation ul li a{
+            position: relative;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            font-weight: 500;
+
+        }
+        .navigation ul li a .icon{
+            position: relative;
+            display: block;
+            line-height: 75px;
+            font-size: 1.5em;
+            text-align: center;
+            transition: 0.5s;
+            color:#501a1a;
+        }
+        .navigation ul li.active a .icon {
+            transform: translateY(-20px);
+        }
+        .navigation ul li a .text {
+            position: absolute;
+            color:#501a1a;
+            font-weight: 400;
+            font-size: 0.75em;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        .navigation ul li:hover a .text{
+            opacity: 1;
+        }
+        .navigation ul li.active a .text{
+            opacity: 1;
+            transform: translateY(5px);
+
+        }
+        .indicator {
+            position: absolute;
+            top: 0%;
+            width: 70px;
+            height: 60px;
+            background: #f1dbdb;
+            border-radius: 50%;
+            
+            transition: 0.5s;
+        }
+        .indicator::before{
+            content: '';
+            position: absolute;
+            top: 0%;
+            left: -22px;
+            width: 20px;
+            height: 20px;
+            
+            
+            background : transparent;
+        }
+        .indicator::after{
+            content: '';
+            position: absolute;
+            top: 0%;
+            right: -22px;
+            width: 20px;
+            height: 20px;
+            
+          
+            background : transparent;
+        }
+        .navigation ul li:nth-child(1).active ~ .indicator{
+            transform: translateX(calc(1px * -0));
+        }
+        .navigation ul li:nth-child(2).active ~ .indicator{
+            transform: translateX(calc(70px * 1));
+        }
+        .navigation ul li:nth-child(3).active ~ .indicator{
+            transform: translateX(calc(70px * 2));
+        }
+        .navigation ul li:nth-child(4).active ~ .indicator{
+            transform: translateX(calc(70px * 3));
+        }
+        .navigation ul li:nth-child(5).active ~ .indicator{
+            transform: translateX(calc(70px * 4));
+        } 
+        .navigation ul li:nth-child(6).active ~ .indicator{
+            transform: translateX(calc(70px * 5));
+        }
+        .navigation ul li:nth-child(7).active ~ .indicator{
+            transform: translateX(calc(70px * 6));
+        }
         .section {
             width: 100%;
             min-height: 100vh;
-            background: url(about\ 3.jpg) no-repeat;
+            background: url(images/about.jpg) no-repeat;
             background-size:cover;
            
         }
@@ -42,10 +174,10 @@
             width: 40%;
         }
 
-            .image-section img {
-                width: 100%;
-                height: auto;
-            }
+        .image-section img {
+            width: 100%;
+            height: auto;
+        }
 
         .content-section {
             text-transform: uppercase;
@@ -105,9 +237,71 @@
     </style>
 </head>
 <body>
+    <header>
+        <div class="navigation">
+            <div class="logo"><img src="logo.svg" alt="">E-Lib</div>
+            <ul>
+                <li class="list">
+                    <a href="home.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="shop.html">
+                        <span class="icon">
+                         <ion-icon name="bag-outline"></ion-icon>
+                        </span>
+                        <span class="text">Shop</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                        </span>
+                        <span class="text">Events</span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="about_us.html">
+                        <span class="icon">
+                            <ion-icon name="information-circle-outline"></ion-icon>
+                        </span>
+                        <span class="text">About</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="call-outline"></ion-icon>
+                        </span>
+                        <span class="text">Contact us</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="text">Log in / Sign up</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="text">Cart</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+     </header>
     <section id="about us" class="section-p1">
-        <img src="img/about/project77.jpg" alt="">
-    </section>
         <div>
             <marquee bgcolor="pink" loop="-1" scrollamount="8">WHAT DO YOU WANT TO KNOW ABOUT E-Lib</marquee>
         </div>  
@@ -139,6 +333,11 @@
             
         </div>
     </div>
-
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
+           
+      
+
+

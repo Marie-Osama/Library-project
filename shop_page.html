@@ -4,18 +4,26 @@
     <title>Shop now</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Red+Hat+Display:wght@300&family=Shadows+Into+Light&display=swap');
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+        body {
+            width: 100%;
+            
+        }
         .logo {
             padding-right: 600px;
             font-size: 3em;
-            color: white;
+            color: rgb(150,62,81);
             font-family: 'Shadows Into Light', cursive;
         }
         header{
+            font-family: 'Poppins', sans-serif;
             display: flex;
             background-color: white;
             width: 100%;
@@ -25,7 +33,7 @@
         .navigation{
             width: 100%;
             height: 60px;
-            background: #556b2f;
+            background: white;
             position: relative;
             display: flex;
             justify-content:center;
@@ -64,14 +72,14 @@
             font-size: 1.5em;
             text-align: center;
             transition: 0.5s;
-            color:beige;
+            color:#501a1a;
         }
         .navigation ul li.active a .icon {
             transform: translateY(-20px);
         }
         .navigation ul li a .text {
             position: absolute;
-            color:beige;
+            color:#501a1a;
             font-weight: 400;
             font-size: 0.75em;
             letter-spacing: 0.05em;
@@ -92,63 +100,54 @@
             top: 0%;
             width: 70px;
             height: 60px;
-            background: #bdb76b;
+            background: #f1dbdb;
             border-radius: 50%;
+            
             transition: 0.5s;
         }
-
-            .indicator::before {
-                content: '';
-                position: absolute;
-                top: 0%;
-                left: -22px;
-                width: 20px;
-                height: 20px;
-                background: transparent;
-            }
-
-            .indicator::after {
-                content: '';
-                position: absolute;
-                top: 0%;
-                right: -22px;
-                width: 20px;
-                height: 20px;
-                background: transparent;
-            }
-
-        .navigation ul li:nth-child(1).active ~ .indicator {
+        .indicator::before{
+            content: '';
+            position: absolute;
+            top: 0%;
+            left: -22px;
+            width: 20px;
+            height: 20px;
+            
+            
+            background : transparent;
+        }
+        .indicator::after{
+            content: '';
+            position: absolute;
+            top: 0%;
+            right: -22px;
+            width: 20px;
+            height: 20px;
+            
+          
+            background : transparent;
+        }
+        .navigation ul li:nth-child(1).active ~ .indicator{
             transform: translateX(calc(1px * -0));
         }
-
-        .navigation ul li:nth-child(2).active ~ .indicator {
+        .navigation ul li:nth-child(2).active ~ .indicator{
             transform: translateX(calc(70px * 1));
         }
-
-        .navigation ul li:nth-child(3).active ~ .indicator {
+        .navigation ul li:nth-child(3).active ~ .indicator{
             transform: translateX(calc(70px * 2));
         }
-
-        .navigation ul li:nth-child(4).active ~ .indicator {
+        .navigation ul li:nth-child(4).active ~ .indicator{
             transform: translateX(calc(70px * 3));
         }
-
-        .navigation ul li:nth-child(5).active ~ .indicator {
+        .navigation ul li:nth-child(5).active ~ .indicator{
             transform: translateX(calc(70px * 4));
-        }
-
-        .navigation ul li:nth-child(6).active ~ .indicator {
+        } 
+        .navigation ul li:nth-child(6).active ~ .indicator{
             transform: translateX(calc(70px * 5));
         }
-
-        .navigation ul li:nth-child(7).active ~ .indicator {
+        .navigation ul li:nth-child(7).active ~ .indicator{
             transform: translateX(calc(70px * 6));
         }
-        body {
-            width: 100%;
-            
-        }
-
         #shop-header {
             background-image: url(images/bookimg.jpg);
             width: 100%;
@@ -276,7 +275,7 @@
             transition: 0.7s ease;
         }
         #categories a:hover{
-            background-color: gold;
+            background-color: #ffd700;
         }
         #categories .categ {  
             padding-top: 20px;
@@ -284,13 +283,11 @@
     </style>
 </head>
 <body>
-
-    <!--header-->
     <header>
         <div class="navigation">
             <div class="logo"><img src="logo.svg" alt="">E-Lib</div>
             <ul>
-                <li class="list active">
+                <li class="list">
                     <a href="home.html">
                         <span class="icon">
                             <ion-icon name="home-outline"></ion-icon>
@@ -298,10 +295,10 @@
                         <span class="text">Home</span>
                     </a>
                 </li>
-                <li class="list">
-                    <a href="shop_page.html">
+                <li class="list active">
+                    <a href="shop.html">
                         <span class="icon">
-                            <ion-icon name="bag-outline"></ion-icon>
+                         <ion-icon name="bag-outline"></ion-icon>
                         </span>
                         <span class="text">Shop</span>
                     </a>
@@ -349,12 +346,12 @@
                 <div class="indicator"></div>
             </ul>
         </div>
-    </header>
+     </header>
     <section id="shop">
         <div id="shop-header">
             <h1>SHOP NOW</h1>
             <p style="color:cornsilk">
-                "I don’t have to look far to find treasures. I discover them every time I visit a library."
+                "I don�t have to look far to find treasures. I discover them every time I visit a library."
                 - Michael Embry
             </p>
         </div>
@@ -373,7 +370,7 @@
             </div>
         </div>
 
-
+        
 
         <!--books -->
         <div id="books">
@@ -421,7 +418,7 @@
                                 <h4>It Ends With Us</h4>
                                 <span>Novel by Collen Hoover</span>
                             </header>
-                            <p>In this “brave and heartbreaking novel that digs its claws into you and doesn’t let go, long after you’ve finished it” (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can’t stop thinking about her first love.</p>
+                            <p>In this �brave and heartbreaking novel that digs its claws into you and doesn�t let go, long after you�ve finished it� (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can�t stop thinking about her first love.</p>
                             <h5>110EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -471,7 +468,7 @@
                                 <h4>The Spanish Love Deception</h4>
                                 <span>Novel by Elena Armas</span>
                             </header>
-                            <p>A TikTok sensation, this rom-com about a young woman who agrees to fake date a colleague and bring him to her sister’s wedding has “everything you could want in a romance” (Helen Hoang, New York Times bestselling author).</p>
+                            <p>A TikTok sensation, this rom-com about a young woman who agrees to fake date a colleague and bring him to her sister�s wedding has �everything you could want in a romance� (Helen Hoang, New York Times bestselling author).</p>
                             <h5>75EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -499,7 +496,7 @@
                                 <h4>Book Lovers</h4>
                                 <span>Book by Emily Henry</span>
                             </header>
-                            <p>“Book Lovers is the perfect title for this utterly romantic read featuring two book industry insiders with crackling chemistry. Heartfelt, funny, and full of joy, Emily Henry’s latest is packed with surprising twists and turns that keep you rooting for Nora and Charlie, every step of the way. (Also, three cheers for Nora’s super-relatable bangs journey!)”</p>
+                            <p>�Book Lovers is the perfect title for this utterly romantic read featuring two book industry insiders with crackling chemistry. Heartfelt, funny, and full of joy, Emily Henry�s latest is packed with surprising twists and turns that keep you rooting for Nora and Charlie, every step of the way. (Also, three cheers for Nora�s super-relatable bangs journey!)�</p>
                             <h5>50EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -554,7 +551,7 @@
                                     Book by Stephen Covey
                                 </span>
                             </header>
-                            <p>A TikTok sensation, this rom-com about a young woman who agrees to fake date a colleague and bring him to her sister’s wedding has “everything you could want in a romance” (Helen Hoang, New York Times bestselling author).</p>
+                            <p>A TikTok sensation, this rom-com about a young woman who agrees to fake date a colleague and bring him to her sister�s wedding has �everything you could want in a romance� (Helen Hoang, New York Times bestselling author).</p>
                             <h5>75EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -582,7 +579,7 @@
                                 <h4>The 4-Hour Workweek</h4>
                                 <span> Book by Tim Ferriss</span>
                             </header>
-                            <p>“Book Lovers is the perfect title for this utterly romantic read featuring two book industry insiders with crackling chemistry. Heartfelt, funny, and full of joy, Emily Henry’s latest is packed with surprising twists and turns that keep you rooting for Nora and Charlie, every step of the way. (Also, three cheers for Nora’s super-relatable bangs journey!)”</p>
+                            <p>�Book Lovers is the perfect title for this utterly romantic read featuring two book industry insiders with crackling chemistry. Heartfelt, funny, and full of joy, Emily Henry�s latest is packed with surprising twists and turns that keep you rooting for Nora and Charlie, every step of the way. (Also, three cheers for Nora�s super-relatable bangs journey!)�</p>
                             <h5>50EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -729,7 +726,7 @@
                                 <h4>It Ends With Us</h4>
                                 <span>Novel by Collen Hoover</span>
                             </header>
-                            <p>In this “brave and heartbreaking novel that digs its claws into you and doesn’t let go, long after you’ve finished it” (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can’t stop thinking about her first love.</p>
+                            <p>In this �brave and heartbreaking novel that digs its claws into you and doesn�t let go, long after you�ve finished it� (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can�t stop thinking about her first love.</p>
                             <h5>110EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -794,7 +791,7 @@
                                 <h4>It Ends With Us</h4>
                                 <span>Novel by Collen Hoover</span>
                             </header>
-                            <p>In this “brave and heartbreaking novel that digs its claws into you and doesn’t let go, long after you’ve finished it” (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can’t stop thinking about her first love.</p>
+                            <p>In this �brave and heartbreaking novel that digs its claws into you and doesn�t let go, long after you�ve finished it� (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can�t stop thinking about her first love.</p>
                             <h5>110EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -874,7 +871,7 @@
                                 <h4>It Ends With Us</h4>
                                 <span>Novel by Collen Hoover</span>
                             </header>
-                            <p>In this “brave and heartbreaking novel that digs its claws into you and doesn’t let go, long after you’ve finished it” (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can’t stop thinking about her first love.</p>
+                            <p>In this �brave and heartbreaking novel that digs its claws into you and doesn�t let go, long after you�ve finished it� (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can�t stop thinking about her first love.</p>
                             <h5>110EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -902,19 +899,6 @@
         var cart = 0;
         function addtocart() {
 
-        }
-    </script>
-
-    <!--header script-->
-    <script>
-        const list = document.querySelectorAll('.list');
-        function activeLink() {
-            list.forEach((item) => item.classList.remove('active'));
-            this.classList.add('active');
-        }
-        list.forEach((item) => item.addEventListener('click', activeLink));
-        function imgSlider(anything) {
-            document.getElementById("slider").src = anything;
         }
     </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

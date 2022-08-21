@@ -6,6 +6,7 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Red+Hat+Display:wght@300&family=Shadows+Into+Light&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -14,87 +15,86 @@
 
         body {
             width: 100%;
-            
         }
+
         .logo {
             padding-right: 600px;
             font-size: 3em;
             color: rgb(150,62,81);
             font-family: 'Shadows Into Light', cursive;
         }
-        header{
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            background-color: white;
-            width: 100%;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .navigation{
+
+
+        .navigation {
             width: 100%;
             height: 60px;
             background: white;
             position: relative;
             display: flex;
-            justify-content:center;
+            justify-content: center;
             align-items: center;
             padding-top: 5px;
             padding-bottom: 10px;
         }
 
-        .navigation ul {
-            display: flex;
-            width: 500px;
-           
-        }
-        .navigation ul li{
-            position: relative;
-            list-style: none;
-            width: 70px;
-            height: 50px;
-            z-index: 1;
-        }
-        .navigation ul li a{
-            position: relative;
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            width: 100%;
-            text-align: center;
-            font-weight: 500;
+            .navigation ul {
+                display: flex;
+                width: 500px;
+            }
 
-        }
-        .navigation ul li a .icon{
-            position: relative;
-            display: block;
-            line-height: 75px;
-            font-size: 1.5em;
-            text-align: center;
-            transition: 0.5s;
-            color:#501a1a;
-        }
-        .navigation ul li.active a .icon {
-            transform: translateY(-20px);
-        }
-        .navigation ul li a .text {
-            position: absolute;
-            color:#501a1a;
-            font-weight: 400;
-            font-size: 0.75em;
-            letter-spacing: 0.05em;
-            transition: 0.5s;
-            opacity: 0;
-            transform: translateY(15px);
-        }
-        .navigation ul li:hover a .text{
-            opacity: 1;
-        }
-        .navigation ul li.active a .text{
-            opacity: 1;
-            transform: translateY(5px);
+                .navigation ul li {
+                    position: relative;
+                    list-style: none;
+                    width: 70px;
+                    height: 50px;
+                    z-index: 1;
+                }
 
-        }
+                    .navigation ul li a {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        width: 100%;
+                        text-align: center;
+                        font-weight: 500;
+                    }
+
+                        .navigation ul li a .icon {
+                            position: relative;
+                            display: block;
+                            line-height: 75px;
+                            font-size: 1.5em;
+                            text-align: center;
+                            transition: 0.5s;
+                            color: #501a1a;
+                        }
+
+                    .navigation ul li.active a .icon {
+                        transform: translateY(-20px);
+                    }
+
+                    .navigation ul li a .text {
+                        position: absolute;
+                        color: #501a1a;
+                        font-weight: 400;
+                        font-size: 0.75em;
+                        letter-spacing: 0.05em;
+                        transition: 0.5s;
+                        opacity: 0;
+                        transform: translateY(15px);
+                    }
+
+                    .navigation ul li:hover a .text {
+                        opacity: 1;
+                    }
+
+                    .navigation ul li.active a .text {
+                        opacity: 1;
+                        transform: translateY(5px);
+                    }
+
         .indicator {
             position: absolute;
             top: 0%;
@@ -102,52 +102,57 @@
             height: 60px;
             background: #f1dbdb;
             border-radius: 50%;
-            
             transition: 0.5s;
         }
-        .indicator::before{
-            content: '';
-            position: absolute;
-            top: 0%;
-            left: -22px;
-            width: 20px;
-            height: 20px;
-            
-            
-            background : transparent;
-        }
-        .indicator::after{
-            content: '';
-            position: absolute;
-            top: 0%;
-            right: -22px;
-            width: 20px;
-            height: 20px;
-            
-          
-            background : transparent;
-        }
-        .navigation ul li:nth-child(1).active ~ .indicator{
+
+            .indicator::before {
+                content: '';
+                position: absolute;
+                top: 0%;
+                left: -22px;
+                width: 20px;
+                height: 20px;
+                background: transparent;
+            }
+
+            .indicator::after {
+                content: '';
+                position: absolute;
+                top: 0%;
+                right: -22px;
+                width: 20px;
+                height: 20px;
+                background: transparent;
+            }
+
+        .navigation ul li:nth-child(1).active ~ .indicator {
             transform: translateX(calc(1px * -0));
         }
-        .navigation ul li:nth-child(2).active ~ .indicator{
+
+        .navigation ul li:nth-child(2).active ~ .indicator {
             transform: translateX(calc(70px * 1));
         }
-        .navigation ul li:nth-child(3).active ~ .indicator{
+
+        .navigation ul li:nth-child(3).active ~ .indicator {
             transform: translateX(calc(70px * 2));
         }
-        .navigation ul li:nth-child(4).active ~ .indicator{
+
+        .navigation ul li:nth-child(4).active ~ .indicator {
             transform: translateX(calc(70px * 3));
         }
-        .navigation ul li:nth-child(5).active ~ .indicator{
+
+        .navigation ul li:nth-child(5).active ~ .indicator {
             transform: translateX(calc(70px * 4));
-        } 
-        .navigation ul li:nth-child(6).active ~ .indicator{
+        }
+
+        .navigation ul li:nth-child(6).active ~ .indicator {
             transform: translateX(calc(70px * 5));
         }
-        .navigation ul li:nth-child(7).active ~ .indicator{
+
+        .navigation ul li:nth-child(7).active ~ .indicator {
             transform: translateX(calc(70px * 6));
         }
+
         #shop-header {
             background-image: url(images/bookimg.jpg);
             width: 100%;
@@ -200,6 +205,7 @@
             transition: transform 1s ease-in-out;
             transform-style: preserve-3d;
         }
+
         #shop .front img {
             width: 100%;
             height: 100%;
@@ -207,17 +213,19 @@
             padding-bottom: 10px;
             z-index: 2;
         }
+
         #shop .card:hover {
             transform: rotateY(180deg);
         }
+
         #shop .card .front, .description {
             width: 100%;
             height: 100%;
             border-radius: 20px;
             position: absolute;
             backface-visibility: hidden;
-            
         }
+
         #shop .card .description {
             background-color: bisque;
             transform: rotateY(180deg);
@@ -225,29 +233,34 @@
             padding-bottom: 10px;
             z-index: 1;
         }
-        #shop .container{
+
+        #shop .container {
             perspective: 1000px;
             display: flex;
             justify-content: space-between;
             padding-top: 20px;
             flex-wrap: wrap;
         }
+
         #shop .description header {
             padding: 5px;
             background-color: #ff884d;
             border-radius: 20px;
         }
+
         #shop .description p {
             font-size: 15px;
             font-family: Arial, Helvetica, sans-serif;
             color: #465b52;
             padding: 5px;
         }
-        #shop .description h5{
+
+        #shop .description h5 {
             font-size: 23px;
             float: left;
             padding-left: 15px;
         }
+
         #shop .description input {
             font-size: 15px;
             font-weight: 700;
@@ -259,9 +272,11 @@
             cursor: pointer;
             transition: 0.7s ease;
         }
-        #shop .description input:hover{
-            transform: scale(1.1);
-        }
+
+            #shop .description input:hover {
+                transform: scale(1.1);
+            }
+
         #categories a {
             font-size: 20px;
             font-weight: 500;
@@ -274,10 +289,12 @@
             margin: 10px 30px 0 0;
             transition: 0.7s ease;
         }
-        #categories a:hover{
-            background-color: #ffd700;
-        }
-        #categories .categ {  
+
+            #categories a:hover {
+                background-color: #ffd700;
+            }
+
+        #categories .categ {
             padding-top: 20px;
         }
     </style>
@@ -298,7 +315,7 @@
                 <li class="list active">
                     <a href="shop.html">
                         <span class="icon">
-                         <ion-icon name="bag-outline"></ion-icon>
+                            <ion-icon name="bag-outline"></ion-icon>
                         </span>
                         <span class="text">Shop</span>
                     </a>
@@ -346,12 +363,13 @@
                 <div class="indicator"></div>
             </ul>
         </div>
-     </header>
+    </header>
+
     <section id="shop">
         <div id="shop-header">
             <h1>SHOP NOW</h1>
             <p style="color:cornsilk">
-                "I don�t have to look far to find treasures. I discover them every time I visit a library."
+                "I don’t have to look far to find treasures. I discover them every time I visit a library."
                 - Michael Embry
             </p>
         </div>
@@ -370,7 +388,7 @@
             </div>
         </div>
 
-        
+
 
         <!--books -->
         <div id="books">
@@ -418,7 +436,7 @@
                                 <h4>It Ends With Us</h4>
                                 <span>Novel by Collen Hoover</span>
                             </header>
-                            <p>In this �brave and heartbreaking novel that digs its claws into you and doesn�t let go, long after you�ve finished it� (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can�t stop thinking about her first love.</p>
+                            <p>In this “brave and heartbreaking novel that digs its claws into you and doesn’t let go, long after you’ve finished it” (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can’t stop thinking about her first love.</p>
                             <h5>110EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -468,7 +486,7 @@
                                 <h4>The Spanish Love Deception</h4>
                                 <span>Novel by Elena Armas</span>
                             </header>
-                            <p>A TikTok sensation, this rom-com about a young woman who agrees to fake date a colleague and bring him to her sister�s wedding has �everything you could want in a romance� (Helen Hoang, New York Times bestselling author).</p>
+                            <p>A TikTok sensation, this rom-com about a young woman who agrees to fake date a colleague and bring him to her sister’s wedding has “everything you could want in a romance” (Helen Hoang, New York Times bestselling author).</p>
                             <h5>75EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -496,7 +514,7 @@
                                 <h4>Book Lovers</h4>
                                 <span>Book by Emily Henry</span>
                             </header>
-                            <p>�Book Lovers is the perfect title for this utterly romantic read featuring two book industry insiders with crackling chemistry. Heartfelt, funny, and full of joy, Emily Henry�s latest is packed with surprising twists and turns that keep you rooting for Nora and Charlie, every step of the way. (Also, three cheers for Nora�s super-relatable bangs journey!)�</p>
+                            <p>“Book Lovers is the perfect title for this utterly romantic read featuring two book industry insiders with crackling chemistry. Heartfelt, funny, and full of joy, Emily Henry’s latest is packed with surprising twists and turns that keep you rooting for Nora and Charlie, every step of the way. (Also, three cheers for Nora’s super-relatable bangs journey!)”</p>
                             <h5>50EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -551,7 +569,7 @@
                                     Book by Stephen Covey
                                 </span>
                             </header>
-                            <p>A TikTok sensation, this rom-com about a young woman who agrees to fake date a colleague and bring him to her sister�s wedding has �everything you could want in a romance� (Helen Hoang, New York Times bestselling author).</p>
+                            <p> The 7 Habits of Highly Effective People is a business and self-help book written by Stephen R. Covey. Covey presents an approach to being effective in attaining goals by aligning oneself to what he calls "true north" principles.</p>
                             <h5>75EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -565,7 +583,7 @@
                                 <h4>The Power of Now</h4>
                                 <span>Book by Eckhart Tolle</span>
                             </header>
-                            <p> A troubled young mother yearns for a shot at redemption in this heartbreaking yet hopeful story from #1 New York Times bestselling author Colleen Hoover.</p>
+                            <p> The Power of Now: A Guide to Spiritual Enlightenment is a book by Eckhart Tolle. It presents itself as a discussion about how people interact with themselves and others. The concept of self reflection and presence in the moment are presented along with simple exercises for the achievement of its principles.</p>
                             <h5>60EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -579,7 +597,7 @@
                                 <h4>The 4-Hour Workweek</h4>
                                 <span> Book by Tim Ferriss</span>
                             </header>
-                            <p>�Book Lovers is the perfect title for this utterly romantic read featuring two book industry insiders with crackling chemistry. Heartfelt, funny, and full of joy, Emily Henry�s latest is packed with surprising twists and turns that keep you rooting for Nora and Charlie, every step of the way. (Also, three cheers for Nora�s super-relatable bangs journey!)�</p>
+                            <p>The 4-Hour Workweek: Escape 9–5, Live Anywhere, and Join the New Rich is a self-help book by Timothy Ferriss, an American writer, educational activist, and entrepreneur. </p>
                             <h5>50EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -594,7 +612,7 @@
                                 <span>Book by Norman Vincent Peale</span>
                             </header>
                             <p>
-                                November 9 is a standalone contemporary romance novel. Beloved #1 New York Times bestselling author Colleen Hoover returns with an unforgettable love story between a writer and his unexpected muse.
+                                An international bestseller with over five million copies in print, The Power of Positive Thinking has helped men and women around the world to achieve fulfillment in their lives through Dr. Norman Vincent Peale’s powerful message of faith and inspiration.
                             </p>
                             <h5>100EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
@@ -609,7 +627,7 @@
                                 <h4>Rich Dad Poor Dad</h4>
                                 <span>Book by Robert Kiyosaki and Sharon Lechter</span>
                             </header>
-                            <p>The Me Before You Trilogy follows the story of Louisa Clark through love, heartbreak, and life-changing decisions as she discovers who she really is. </p>
+                            <p>Rich Dad Poor Dad is a 1997 book written by Robert T. Kiyosaki and Sharon Lechter. It advocates the importance of financial literacy, financial independence and building wealth through investing in assets, real estate investing, starting and owning businesses, as well as increasing one's financial intelligence.</p>
                             <h5>55EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -626,7 +644,7 @@
                                 </span>
                             </header>
                             <p>
-                                November 9 is a standalone contemporary romance novel. Beloved #1 New York Times bestselling author Colleen Hoover returns with an unforgettable love story between a writer and his unexpected muse.
+                                Legendary leadership and elite performance expert Robin Sharma introduced The 5am Club concept over twenty years ago, based on a revolutionary morning routine that has helped his clients maximize their productivity, activate their best health and bulletproof their serenity in this age of overwhelming complexity.
                             </p>
                             <h5>100EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
@@ -642,7 +660,7 @@
                                 <span>Book by Matt Haig</span>
                             </header>
                             <p>
-                                November 9 is a standalone contemporary romance novel. Beloved #1 New York Times bestselling author Colleen Hoover returns with an unforgettable love story between a writer and his unexpected muse.
+                                A manual of reflections for an increasingly stressful world Nothing is stronger than a small hope that doesn’t give up.The Comfort Book is a collection of little islands of hope, a gathering of consolations and stories that give us new ways of seeing ourselves and the world.
                             </p>
                             <h5>100EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
@@ -658,7 +676,7 @@
                                 <span>Book by Dale Carnegie</span>
                             </header>
                             <p>
-                                November 9 is a standalone contemporary romance novel. Beloved #1 New York Times bestselling author Colleen Hoover returns with an unforgettable love story between a writer and his unexpected muse.
+                                Over 30 million copies have been sold worldwide, making it one of the best-selling books of all time. Carnegie had been conducting business education courses in New York since 1912.
                             </p>
                             <h5>100EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
@@ -674,7 +692,7 @@
                                 <span>Book by Brianna Wiest</span>
                             </header>
                             <p>
-                                November 9 is a standalone contemporary romance novel. Beloved #1 New York Times bestselling author Colleen Hoover returns with an unforgettable love story between a writer and his unexpected muse.
+                                In her second compilation of published writing, Brianna Wiest explores pursuing purpose over passion, embracing negative thinking, seeing the wisdom in daily routine, and becoming aware of the cognitive biases that are creating the way you see your life.
                             </p>
                             <h5>100EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
@@ -694,10 +712,10 @@
                         </div>
                         <div class="description">
                             <header>
-                                <h4>Where the Crawdads Sing</h4>
-                                <span>Novel by Delia Owens</span>
+                                <h4>Guns, Germs, and Steel</h4>
+                                <span>Book by Jared Diamond</span>
                             </header>
-                            <p>Where the Crawdads Sing is a 2018 coming-of-age murder mystery novel by American author Delia Owens. The story follows two timelines that slowly intertwine. The first timeline describes the life and adventures of a young girl named Kya as she grows up isolated in the marshes of North Carolina.</p>
+                            <p>Guns, Germs, and Steel: The Fates of Human Societies is a 1997 transdisciplinary non-fiction book by Jared Diamond. In 1998, it won the Pulitzer Prize for general nonfiction and the Aventis Prize for Best Science Book.</p>
                             <h5>80EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -708,14 +726,14 @@
                         </div>
                         <div class="description">
                             <header>
-                                <h4>Atomic Habits</h4>
-                                <span>book by James Clear</span>
+                                <h4>The History of the Ancient World: From the Earliest Accounts to the Fall of Rome</h4>
+                                <span>Book by Susan Wise Bauer</span>
                             </header>
                             <p>
-                                No matter your goals, Atomic Habits offers a proven framework for improving--every day. James Clear, one of the world's leading experts on habit formation, reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results./p>
-                                <h5>100EGP</h5>
-                                <input type="button" value="Add to Cart" onclick="addtocart()" />
-                        </div>
+                                A lively and engaging narrative history showing the common threads in the cultures that gave birth to our own.</p>                              
+                            <h5>100EGP</h5>
+                            <input type="button" value="Add to Cart" onclick="addtocart()" />
+                         </div>
                     </div>
                     <div class="card">
                         <div class="front">
@@ -723,10 +741,10 @@
                         </div>
                         <div class="description">
                             <header>
-                                <h4>It Ends With Us</h4>
-                                <span>Novel by Collen Hoover</span>
+                                <h4> Egyptian Mythology</h4>
+                                <span>Book by Geraldine Harris</span>
                             </header>
-                            <p>In this �brave and heartbreaking novel that digs its claws into you and doesn�t let go, long after you�ve finished it� (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can�t stop thinking about her first love.</p>
+                            <p>From stories of resurrected mummies and thousand-year-old curses to powerful pharaohs and the coveted treasures of the Great Pyramids, ancient Egypt has had an unfaltering grip on the modern imagination</p>
                             <h5>110EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -737,10 +755,10 @@
                         </div>
                         <div class="description">
                             <header>
-                                <h4>The 6:20 Man</h4>
-                                <span>Novel by David Baldacci</span>
+                                <h4>Alexander the Great: His Life and His Mysterious Death</h4>
+                                <span>Book by Anthony Everitt</span>
                             </header>
-                            <p>A cryptic murder pulls a former soldier turned financial analyst deep into the corruption and menace that prowl beneath the opulent world of finance, in this #1 New York Times bestselling thriller from David Baldacci.</p>
+                            <p>An acclaimed biographer reconstructs the life of Alexander the Great in this magisterial revisionist portrait.</p>
                             <h5>120EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -759,10 +777,10 @@
                         </div>
                         <div class="description">
                             <header>
-                                <h4>Where the Crawdads Sing</h4>
-                                <span>Novel by Delia Owens</span>
+                                <h4>Harry Potter and the Philosopher's Stone</h4>
+                                <span>Novel by J. K. Rowling</span>
                             </header>
-                            <p>Where the Crawdads Sing is a 2018 coming-of-age murder mystery novel by American author Delia Owens. The story follows two timelines that slowly intertwine. The first timeline describes the life and adventures of a young girl named Kya as she grows up isolated in the marshes of North Carolina.</p>
+                            <p>Harry Potter and the Philosopher's Stone is a 1997 fantasy novel written by British author J. K. Rowling.</p>
                             <h5>80EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -773,12 +791,13 @@
                         </div>
                         <div class="description">
                             <header>
-                                <h4>Atomic Habits</h4>
-                                <span>book by James Clear</span>
+                                <h4>The Hunger Games</h4>
+                                <span>Novel by Suzanne Collins</span>
                             </header>
                             <p>
-                                No matter your goals, Atomic Habits offers a proven framework for improving--every day. James Clear, one of the world's leading experts on habit formation, reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results./p>
-                                <h5>100EGP</h5>
+                                The Hunger Games is a 2008 dystopian novel by the American writer Suzanne Collins. It is written in the perspective of 16-year-old Katniss Everdeen, who lives in the future, post-apocalyptic nation of Panem in North America.
+                            </p>
+                            <h5>100EGP</h5>
                                 <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
                     </div>
@@ -788,10 +807,10 @@
                         </div>
                         <div class="description">
                             <header>
-                                <h4>It Ends With Us</h4>
-                                <span>Novel by Collen Hoover</span>
+                                <h4>The Gate Keeper</h4>
+                                <span>Novel by James Byrne</span>
                             </header>
-                            <p>In this �brave and heartbreaking novel that digs its claws into you and doesn�t let go, long after you�ve finished it� (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can�t stop thinking about her first love.</p>
+                            <p>In this “brave and heartbreaking novel that digs its claws into you and doesn’t let go, long after you’ve finished it” (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can’t stop thinking about her first love.</p>
                             <h5>110EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -802,10 +821,10 @@
                         </div>
                         <div class="description">
                             <header>
-                                <h4>The 6:20 Man</h4>
-                                <span>Novel by David Baldacci</span>
+                                <h4>Life of Pi</h4>
+                                <span>Novel by Yann Martel</span>
                             </header>
-                            <p>A cryptic murder pulls a former soldier turned financial analyst deep into the corruption and menace that prowl beneath the opulent world of finance, in this #1 New York Times bestselling thriller from David Baldacci.</p>
+                            <p>The protagonist is Piscine Molitor "Pi" Patel, an Indian boy from Pondicherry who explores issues of spirituality and metaphysics from an early age. </p>
                             <h5>120EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -816,10 +835,10 @@
                         </div>
                         <div class="description">
                             <header>
-                                <h4>The 6:20 Man</h4>
-                                <span>Novel by David Baldacci</span>
+                                <h4>Harry Potter and the Prisoner of Azkaban</h4>
+                                <span>Novel by J. K. Rowling</span>
                             </header>
-                            <p>A cryptic murder pulls a former soldier turned financial analyst deep into the corruption and menace that prowl beneath the opulent world of finance, in this #1 New York Times bestselling thriller from David Baldacci.</p>
+                            <p>Harry Potter and the Prisoner of Azkaban is a fantasy novel written by British author J. K. Rowling and is the third in the Harry Potter series. The book follows Harry Potter, a young wizard, in his third year at Hogwarts School of Witchcraft and Wizardry.</p>
                             <h5>120EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -839,10 +858,10 @@
                         </div>
                         <div class="description">
                             <header>
-                                <h4>Where the Crawdads Sing</h4>
-                                <span>Novel by Delia Owens</span>
+                                <h4>Alexander and the Terrible, Horrible, No Good, Very Bad Day</h4>
+                                <span>2014 ‧ Comedy/Family ‧ 1h 21m</span>
                             </header>
-                            <p>Where the Crawdads Sing is a 2018 coming-of-age murder mystery novel by American author Delia Owens. The story follows two timelines that slowly intertwine. The first timeline describes the life and adventures of a young girl named Kya as she grows up isolated in the marshes of North Carolina.</p>
+                            <p>When Alexander goes through a string of bad experiences, his family reacts nonchalantly. On the night of his birthday, he makes a wish for them to be more sympathetic but things soon turn chaotic.</p>
                             <h5>80EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -853,11 +872,14 @@
                         </div>
                         <div class="description">
                             <header>
-                                <h4>Atomic Habits</h4>
-                                <span>book by James Clear</span>
+                                <h4>Jumanji: The Next Level</h4>
+                                <span>
+                                    2019 ‧ Adventure/Comedy ‧ 2h 3m
+                                </span>
                             </header>
                             <p>
-                                No matter your goals, Atomic Habits offers a proven framework for improving--every day. James Clear, one of the world's leading experts on habit formation, reveals practical strategies that will teach you exactly how to form good habits, break bad ones, and master the tiny behaviors that lead to remarkable results./p>
+                                When Spencer goes missing, the gang returns to Jumanji to travel unexplored territories and help their friend escape the world's most dangerous game.
+                            </p>
                                 <h5>100EGP</h5>
                                 <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -868,10 +890,12 @@
                         </div>
                         <div class="description">
                             <header>
-                                <h4>It Ends With Us</h4>
-                                <span>Novel by Collen Hoover</span>
+                                <h4>Avengers: Age of Ultron</h4>
+                                <span>
+                                    2015 ‧ Action/Adventure ‧ 2h 21m
+                                </span>
                             </header>
-                            <p>In this �brave and heartbreaking novel that digs its claws into you and doesn�t let go, long after you�ve finished it� (Anna Todd, New York Times bestselling author) from the #1 New York Times bestselling author of All Your Perfects, a workaholic with a too-good-to-be-true romance can�t stop thinking about her first love.</p>
+                            <p>Tony Stark builds an artificial intelligence system named Ultron with the help of Bruce Banner. When the sentient Ultron makes plans to wipe out the human race, the Avengers set out to stop him.</p>
                             <h5>110EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>
@@ -882,10 +906,12 @@
                         </div>
                         <div class="description">
                             <header>
-                                <h4>The 6:20 Man</h4>
-                                <span>Novel by David Baldacci</span>
+                                <h4>Ahwak</h4>
+                                <span>
+                                    2015 ‧ Romance/Comedy ‧ 2 hours
+                                </span>
                             </header>
-                            <p>A cryptic murder pulls a former soldier turned financial analyst deep into the corruption and menace that prowl beneath the opulent world of finance, in this #1 New York Times bestselling thriller from David Baldacci.</p>
+                            <p>From the producers of the smash hit trilogy OMAR WA SALMA comes their new film featuring Egyptian heartthrob TAMER HOSNY who plays Dr. Sherif, a prominent plastic surgeon who falls head-over-heels for one of his patients.</p>
                             <h5>120EGP</h5>
                             <input type="button" value="Add to Cart" onclick="addtocart()" />
                         </div>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+    <title>Log In</title>
+    <style>
+    body{
+       height: 100vh;
+       display:flex;
+       align-items: center;
+       justify-content: center;
+       background-color: white;
+    }
+    .Login{
+        width: 28%;
+        border: 1px solid green;
+        border-radius: 10px;
+        padding: 50px;
+        box-shadow: 0px 5px 10px greenyellow;
+    }
+    .Login form span{
+        display: block;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        padding-top: 5px;
+        margin-top: 12px;
+    }
+    .Login form .box{
+        border: 2px solid lightgrey;
+        border-radius: 10px;
+        padding: 10px;
+        width: 100%;
+    }
+    .form-control input:focus{
+        outline: 0;
+        border-color: rgb(35, 151, 219);
+    }
+    .form-control.success input{
+        border-color: green;
+    }
+    .form-control.error input{
+        border-color: red;
+    }
+    .form-control small{
+        color: red;
+        position: absolute;
+        visibility: hidden;
+    }
+    .form-control.error small{
+        visibility: visible;
+    }
+    .Login .checkbox-text{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 9px;
+        margin-bottom: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: small;
+    }
+    #check{
+        accent-color: #4070f4;
+        margin-top: 9px;
+    }
+    .Login a{
+        text-decoration: none;
+        color: blue;
+        margin-top: 10px;
+    }
+    .Login a:hover{
+        text-decoration: underline;
+    }
+    .Login a:visited{
+        color: blueviolet;
+    }
+    #btn{
+       width: 100%;
+       background-color: #4bcc2e;
+       color: white;
+       padding: 12px 0px 12px 5px;
+       margin: 8px 0;
+       border: none;
+       border-radius: 4px;
+       letter-spacing: 1px;
+       font-size: 17px;
+    }
+    #btn:hover{
+        background-color: green;
+        cursor: pointer;
+    }
+    .Login form p{
+        margin-top: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: small;
+    }
+    </style>
+        <body>
+        <div class="Login">
+            <form id="form">
+                <h2 align="center">SIGN IN</h2>
+                <div class="form-control">
+                <span>Email</span>
+                <input type="text"placeholder="Email" class="box" id="email"/><br>
+                <small>Error Message</small>
+                </div>
+                <div class="form-control">
+                <span>Password</span>
+                <input type="password"placeholder="password" class="box" id="password"/><br>
+                <small>Error Message</small>
+                </div>
+                <div class="checkbox-text">
+                    <div class="checkbox-content">
+                     <input type="checkbox"id="check"/>
+                     <label for="check">Remember me</label>
+                    </div>
+                    <a href="http://127.0.0.1:5500/Forget%20Password%20Form.html">Forget password?</a>
+                </div>
+               <input type="submit"value="Sign in"id="btn"/></a><br>
+                <p>Don't have an account? <a href="http://127.0.0.1:5500/Registration%20Form.html">Sign Up</a></p>
+            </form>
+        </div>
+        <script>
+            const form = document.getElementById('form'); 
+            const userEmail=document.getElementById('email');
+            const userPass=document.getElementById('password');
+            function setErrorFor(input,message){
+                     const formControl = input.parentElement;
+                     formControl.classList.add('error');
+                     formControl.classList.remove('success');
+                     const small = formControl.querySelector('small');
+                     small.innerText = message;
+             }
+            function setSuccessFor(input){
+                     const formControl = input.parentElement;
+                     formControl.classList.add('success');
+                     formControl.classList.remove('error');
+                     const small = formControl.querySelector('small');
+                     small.innerText = '';
+            }
+            function isValidEmail(email){
+                     const re1 = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                     return re1.test(email);
+            }
+            function isValidPassword(password){
+                const re2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/;
+                return re2.test(password);
+            }
+            function NewPage(){
+                     if(isValidEmail && isValidPassword){
+                        window.location.href="https://www.google.com/";
+                    }
+                }
+                form.addEventListener('submit' , (e)=>{
+                        e.preventDefault();
+                        checkInputs();
+                }); 
+                function checkInputs(){
+                    if(userEmail.value.trim() === ''){
+                        setErrorFor(userEmail,"Email is required");
+                    }else if(!isValidEmail(userEmail.value)){
+                        setErrorFor(userEmail,"Please Enter valid email, e.g:info@yahoo.com");
+                    }else{
+                        setSuccessFor(userEmail);
+                    }
+                    if(userPass.value.trim()=== ''){
+                        setErrorFor(userPass,"Password is required");
+                    }else if (!isValidPassword(userPass.value)){
+                        setErrorFor(userPass,"The password you entered is incorrect. Please try again");
+                    }else{
+                        setSuccessFor(userPass);
+                        NewPage();
+                    }
+                }   
+        </script>
+    </body>
+    </head>
+</html>

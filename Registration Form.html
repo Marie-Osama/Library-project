@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up</title>
+        <style>
+            body{
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+            }
+            form{
+                width: 35%;
+                border: 1px solid green;
+                border-radius: 10px;
+                padding: 50px;
+                box-shadow: 0px 5px 10px greenyellow;
+            }
+            form span{
+                display: block;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 14px;
+                padding-top: 5px;
+                margin-top: 14px;
+            }
+            form .textbox{
+                border: 2px solid lightgray;
+                border-radius: 10px;
+                width: 100%;
+                padding: 10px;
+            }
+            .input-control input:focus{
+                outline: 0;
+                border-color: rgb(35, 151, 219);
+            }
+            .input-control.success input{
+                border-color: green;
+            }
+            .input-control.error input{
+                border-color: red;
+            }
+            .input-control small{
+                color: red;
+                position: absolute;
+                visibility: hidden;
+            }
+            .input-control.error small{
+                visibility: visible;
+            }
+            form .Date{
+                margin-top: 10px;
+                padding: 5px 70px 5px 0px;
+            } 
+            #btn{
+                width: 100%;
+                margin-top: 20px;
+                background-color: #4bcc2e;
+                color: white;
+                letter-spacing: 1px;
+                border: none;
+                border-radius: 4px ;
+                font-size: medium;
+                padding: 10px 0px 10px 0px;
+            }
+            #btn:hover{
+                background-color: green;
+                cursor: pointer;
+            }
+            form p{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: small;
+            }
+        </style>
+        <body>
+            <form id="form">
+                <h2 align="center">SIGN UP</h2>
+                <div class="input-control">
+                    <span>Username</span>
+                    <input type="text"placeholder="Username"class="textbox" id="usernametext"/><br>
+                    <small>Error Message</small>
+                </div>
+                <div class="input-control">
+                <span>Email</span>
+                <input type="text"placeholder="Email"class="textbox"id="emailtext"/><br>
+                <small>Error Message</small>
+                </div>
+                <div class="input-control">
+                <span>Password</span>
+                <input type="password"placeholder="Create a Password"class="textbox" id="passwordtext"/><br>
+                <small>Error Message</small>
+                </div>
+                <div class="input-control">
+                <span>Confirm Password</span>
+                <input type="password"placeholder="Confirm password"class="textbox"id="confirmationtext"/><br>
+                <small>Error Message</small>
+                </div>
+                <span>Date of Birth</span>
+                <select name="Day"class="Date">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option> 
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                </select>
+                <select name="Month"class="Date">
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="Mar">Mar</option>
+                    <option value="Apr">Apr</option>
+                    <option value="Mai">Mai</option>
+                    <option value="Jun">Jun</option>
+                    <option value="Jul">Jul</option>
+                    <option value="Aug">Aug</option>
+                    <option value="Sep">Sep</option>
+                    <option value="Oct">Oct</option>
+                    <option value="Nov">Nov</option>
+                    <option value="Dec">Dec</option>
+                </select>
+                <select name="Year"class="Date">
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                    <option value="2020">2020</option>
+                    <option value="2019">2019</option>
+                    <option value="2018">2018</option>
+                    <option value="2017">2017</option>
+                    <option value="2016">2016</option>
+                    <option value="2015">2015</option>
+                    <option value="2014">2014</option>
+                    <option value="2013">2013</option>
+                    <option value="2012">2012</option>
+                    <option value="2011">2011</option>
+                    <option value="2010">2010</option>
+                    <option value="2009">2009</option>
+                    <option value="2008">2008</option>
+                    <option value="2007">2007</option>
+                    <option value="2006">2006</option>
+                    <option value="2005">2005</option>
+                    <option value="2004">2004</option>
+                    <option value="2003">2003</option>
+                    <option value="2002">2002</option>
+                    <option value="2001">2001</option>
+                    <option value="2000">2000</option>
+                    <option value="1999">1999</option>
+                    <option value="1998">1998</option>
+                    <option value="1997">1997</option>
+                    <option value="1996">1996</option>
+                    <option value="1995">1995</option>
+                    <option value="1994">1994</option>
+                    <option value="1993">1993</option>
+                    <option value="1992">1992</option>
+                </select>
+                <br>
+                <a href="http://www.google.com"><input type="submit"id="btn"value="Sign Up"></a>
+                <p>Already have an account? <a href="http://127.0.0.1:5500/LogIn%20Form.html"> Log In</a></p>
+            </form>
+            <script>
+                 const form = document.getElementById('form'); 
+                 const username = document.getElementById('usernametext');
+                 const useremail = document.getElementById('emailtext');
+                 const password1 = document.getElementById('passwordtext');
+                 const password2 = document.getElementById('confirmationtext');
+                 function setErrorFor(input,message){
+                     const formControl = input.parentElement;
+                     formControl.classList.add('error');
+                     formControl.classList.remove('success');
+                     const small = formControl.querySelector('small');
+                     small.innerText = message;
+                }
+                 function setSuccessFor(input){
+                     const formControl = input.parentElement;
+                     formControl.classList.add('success');
+                     formControl.classList.remove('error');
+                     const small = formControl.querySelector('small');
+                     small.innerText = '';
+                     
+                }
+                function isValidEmail(email){
+                     const re1 = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                     return re1.test(email);
+                }
+                function isValidPassword(password){
+                const re2 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/;
+                return re2.test(password);
+                }
+                function NewPage(){
+                     if(isValidEmail && isValidPassword){
+                        window.location.href="http://127.0.0.1:5500/LogIn%20Form.html";
+                    }
+                }
+                form.addEventListener('submit' , function(e){
+                        e.preventDefault();
+                        checkInputs();
+                }); 
+                function checkInputs(){
+                    if(username.value.trim() === ''){
+                        setErrorFor(username,"Username is required.");
+                    }else{
+                        setSuccessFor(username);
+                    }
+                    if(useremail.value.trim()=== ''){
+                        setErrorFor(useremail,"Email is required.");
+                    }else if(!isValidEmail(useremail.value)){
+                        setErrorFor(useremail,"Please Enter valid email, e.g:info@yahoo.com");
+                    }else{
+                        setSuccessFor(useremail);
+                    }
+                    if(password1.value.trim()=== ''){
+                        setErrorFor(password1,"Password is required.");
+                    }else if (!isValidPassword(password1.value)){
+                        setErrorFor(password1,"Password must be at least 8 characters with a mix of letters(lowercase, uppercase), numbers & symbols.");
+                    }else{
+                        setSuccessFor(password1);
+                    }
+                    if(password2.value.trim()===''){
+                        setErrorFor(password2,"Please confirm your password.")
+                    }else if(password2.value !== password1.value){
+                        setErrorFor(password2,"Password doesn't match.");
+                    }else{
+                        setSuccessFor(password2);
+                        NewPage();
+                    }
+                }   
+            </script>
+        </body>
+    </head>
+</html>

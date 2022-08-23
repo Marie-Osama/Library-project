@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Shop now</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Red+Hat+Display:wght@300&family=Shadows+Into+Light&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+        }
+
+        .logo {
+            padding-right: 600px;
+            font-size: 3em;
+            color: rgb(150, 62, 81);
+            font-family: 'Shadows Into Light', cursive;
+        }
+
+        header {
+            display: flex;
+            background-color: white;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 999;
+        }
+
+        .navigation {
+            width: 100%;
+            height: 60px;
+            background: white;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 5px;
+            padding-bottom: 10px;
+        }
+
+        .navigation ul {
+            display: flex;
+            width: 500px;
+        }
+
+        .navigation ul li {
+            position: relative;
+            list-style: none;
+            width: 70px;
+            height: 50px;
+            z-index: 1;
+        }
+
+        .navigation ul li a {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .navigation ul li a .icon {
+            position: relative;
+            display: block;
+            line-height: 75px;
+            font-size: 1.5em;
+            text-align: center;
+            transition: 0.5s;
+            color: #501a1a;
+        }
+
+        .navigation ul li.active a .icon {
+            transform: translateY(-20px);
+        }
+
+        .navigation ul li a .text {
+            font-family: 'Poppins', sans-serif;
+            position: absolute;
+            color: #501a1a;
+            font-weight: 400;
+            font-size: 0.75em;
+            letter-spacing: 0.05em;
+            transition: 0.5s;
+            opacity: 0;
+            transform: translateY(15px);
+        }
+
+        .navigation ul li:hover a .text {
+            opacity: 1;
+        }
+
+        .navigation ul li.active a .text {
+            opacity: 1;
+            transform: translateY(5px);
+        }
+
+        .indicator {
+            position: absolute;
+            top: 0%;
+            width: 70px;
+            height: 60px;
+            background: #f1dbdb;
+            border-radius: 50%;
+            transition: 0.5s;
+        }
+
+        .indicator::before {
+            content: '';
+            position: absolute;
+            top: 0%;
+            left: -22px;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+        }
+
+        .indicator::after {
+            content: '';
+            position: absolute;
+            top: 0%;
+            right: -22px;
+            width: 20px;
+            height: 20px;
+            background: transparent;
+        }
+
+        .navigation ul li:nth-child(1).active~.indicator {
+            transform: translateX(calc(1px * -0));
+        }
+
+        .navigation ul li:nth-child(2).active~.indicator {
+            transform: translateX(calc(70px * 1));
+        }
+
+        .navigation ul li:nth-child(3).active~.indicator {
+            transform: translateX(calc(70px * 2));
+        }
+
+        .navigation ul li:nth-child(4).active~.indicator {
+            transform: translateX(calc(70px * 3));
+        }
+
+        .navigation ul li:nth-child(5).active~.indicator {
+            transform: translateX(calc(70px * 4));
+        }
+
+        .navigation ul li:nth-child(6).active~.indicator {
+            transform: translateX(calc(70px * 5));
+        }
+
+        .navigation ul li:nth-child(7).active~.indicator {
+            transform: translateX(calc(70px * 6));
+        }
+
+        #shop-header {
+            background-image: url(images/bookimg.jpg);
+            width: 100%;
+            height: 30vh;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+            padding: 14px;
+        }
+
+        #shop-header h1,
+        p {
+            color: white;
+        }
+
+        #shop h1 {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        #shop h2 {
+            font-size: 46px;
+        }
+
+        #shop h4 {
+            font-size: 25px;
+        }
+
+        #shop h6 {
+            font-size: 12px;
+        }
+
+        #shop p {
+            font-size: 20px;
+            font-family: 'Lucida Sans';
+            color: #465b52;
+            margin: 15px 0 20px 0;
+        }
+
+        .sections {
+            padding: 40px 80px;
+            text-align: center;
+        }
+
+        #shop .card {
+            width: 250px;
+            height: 350px;
+            border-radius: 20px;
+            position: relative;
+            transition: transform 1s ease-in-out;
+            transform-style: preserve-3d;
+        }
+
+        #shop .front img {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            padding-bottom: 10px;
+            z-index: 2;
+        }
+
+        #shop .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        #shop .card .front,
+        .description {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+
+        #shop .card .description {
+            background-color: bisque;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+            padding-bottom: 10px;
+            z-index: 1;
+        }
+
+        #shop .container {
+            perspective: 1000px;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        #shop .description header {
+            padding: 5px;
+            background-color: #ff884d;
+            border-radius: 20px;
+        }
+
+        #shop .description p {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #465b52;
+            padding: 5px;
+        }
+
+        #shop .description h5 {
+            font-size: 23px;
+            float: left;
+            padding-left: 15px;
+        }
+
+        #shop .description input {
+            font-size: 15px;
+            font-weight: 700;
+            padding: 12px;
+            border-radius: 20px;
+            background-color: #ffbb99;
+            color: #662200;
+            border: none;
+            cursor: pointer;
+            transition: 0.7s ease;
+        }
+
+        #shop .description input:hover {
+            transform: scale(1.1);
+        }
+
+        #categories a {
+            font-size: 20px;
+            font-weight: 500;
+            text-decoration: none;
+            font-family: 'Lucida Sans';
+            color: #465b52;
+            padding: 10px;
+            background-color: darksalmon;
+            border-radius: 20px;
+            margin: 10px 30px 0 0;
+            transition: 0.7s ease;
+        }
+
+        #categories a:hover {
+            background-color: #ffd700;
+        }
+
+        #categories .categ {
+            padding-top: 20px;
+        }
+
+        footer {
+            position: static;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            background-image: url("Images for Web Design/b14.png");
+            background-position: 20% 30%;
+            background-color: #501a1a;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        footer .container {
+            width: 100%;
+            display: flex;
+            gap: 20px;
+            margin-bottom: 2px;
+            height: 200px;
+        }
+
+        .footer-left {
+            flex-grow: 1;
+            margin: 10px;
+            flex-basis: 30%;
+        }
+
+        .footer-center {
+            margin: 10px;
+            flex-grow: 1;
+            flex-basis: 30%;
+            text-align: center;
+            font-size: 20px;
+            padding: 20px;
+            color: white;
+        }
+
+        footer .bottom {
+            text-align: center;
+            color: black;
+        }
+
+        .footer-left h3 {
+            padding: 4px;
+            letter-spacing: 1px;
+            text-align: center;
+            font-size: 22px;
+            color: rgb(150, 62, 81);
+        }
+
+        .hours {
+            padding: 4px;
+            text-align: center;
+            color: white;
+        }
+
+        .newsletter {
+            margin: 10px;
+            padding: 10px;
+            flex-grow: 1;
+            text-align: center;
+            justify-content: center;
+            flex-basis: 60%;
+        }
+
+        .newsletter h4 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .newsletter p {
+            font-size: 14px;
+            font-weight: 600;
+            color: #f1dbdb;
+        }
+
+        .newsletter input {
+            height: 30px;
+            padding: 0 10px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .newsletter button {
+            background-color: #088178;
+            color: white;
+            white-space: nowrap;
+            border: 0px;
+        }
+
+        .newsletter .form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navigation">
+            <div class="logo"><img src="logo.svg" alt="">E-Lib</div>
+            <ul>
+                <li class="list">
+                    <a href="home.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="shop.html">
+                        <span class="icon">
+                            <ion-icon name="bag-outline"></ion-icon>
+                        </span>
+                        <span class="text">Shop</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="events.html">
+                        <span class="icon">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                        </span>
+                        <span class="text">Events</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="about_page">
+                        <span class="icon">
+                            <ion-icon name="information-circle-outline"></ion-icon>
+                        </span>
+                        <span class="text">About</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="call-outline"></ion-icon>
+                        </span>
+                        <span class="text">Contact us</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="text">Log in / Sign up</span>
+                    </a>
+                </li>
+                <li class="list" onclick="save()">
+                    <a href="cart.html">
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="text">Cart</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
+        </div>
+    </header>
+
+    <section id="shop">
+        <div id="shop-header">
+            <h1>SHOP NOW</h1>
+            <p style="color:cornsilk">
+                "I don’t have to look far to find treasures. I discover them every time I visit a library."
+                - Michael Embry
+            </p>
+        </div>
+
+        <!--Categories Section-->
+        <div id="categories" class="sections">
+            <h2>Shop by Category</h2>
+            <div class="categ">
+                <a href="#books">Books</a>
+                <a href="#bstsell">Best selling</a>
+                <a href="#action">Action</a>
+                <a href="#self-help">Self-help</a>
+                <a href="#romance">Romance</a>
+                <a href="#history">History</a>
+                <a href="#movies&tv">Movies & TV</a>
+            </div>
+        </div>
+
+
+
+        <!--books -->
+        <div id="books">
+
+            <!--Best Selling-->
+            <div id="bstsell" class="sections">
+                <h2>Best Selling</h2>
+                <p>Try the world's no.1 products</p>
+                <div class="container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/bstsell/b1.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Where the Crawdads Sing</h4>
+                                <span>Novel by Delia Owens</span>
+                            </header>
+                            <p>Where the Crawdads Sing is a 2018 coming-of-age murder mystery novel by American author
+                                Delia Owens. The story follows two timelines that slowly intertwine. The first timeline
+                                describes the life and adventures of a young girl named Kya as she grows up isolated in
+                                the marshes of North Carolina.</p>
+                            <h5>80EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/bstsell/b2.png" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Atomic Habits</h4>
+                                <span>book by James Clear</span>
+                            </header>
+                            <p>
+                                No matter your goals, Atomic Habits offers a proven framework for improving--every day.
+                                James Clear, one of the world's leading experts on habit formation, reveals practical
+                                strategies that will teach you exactly how to form good habits, break bad ones, and
+                                master the tiny behaviors that lead to remarkable results./p>
+                            <h5>100EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/bstsell/b3.jpg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>It Ends With Us</h4>
+                                <span>Novel by Collen Hoover</span>
+                            </header>
+                            <p>In this “brave and heartbreaking novel that digs its claws into you and doesn’t let go,
+                                long after you’ve finished it” (Anna Todd, New York Times bestselling author) from the
+                                #1 New York Times bestselling author of All Your Perfects, a workaholic with a
+                                too-good-to-be-true romance can’t stop thinking about her first love.</p>
+                            <h5>110EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/bstsell/b5.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>The 6:20 Man</h4>
+                                <span>Novel by David Baldacci</span>
+                            </header>
+                            <p>A cryptic murder pulls a former soldier turned financial analyst deep into the corruption
+                                and menace that prowl beneath the opulent world of finance, in this #1 New York Times
+                                bestselling thriller from David Baldacci.</p>
+                            <h5>120EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/bstsell/b4.jpg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Ugly Love</h4>
+                                <span>Novel by Collen Hoover</span>
+                            </header>
+                            <p>From Colleen Hoover, the #1 Sunday Times bestselling author of It Ends with Us, a
+                                heart-wrenching love story that proves attraction at first sight can be messy. When Tate
+                                Collins meets airline pilot Miles Archer, she doesn't think it's love at first sight.
+                            </p>
+                            <h5>105EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- romance books -->
+            <div id="romance" class="sections">
+                <h2>Romance</h2>
+                <p>Oh romance, how could we ever resist you? The genre that makes your heart all warm and fuzzy focuses
+                    on the love story of the main protagonists.If you're in need of any suggestions, we've got a list of
+                    the best romances of all time and the top picks of the year.</p>
+                <div class="container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/romance/b1.jpg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>The Spanish Love Deception</h4>
+                                <span>Novel by Elena Armas</span>
+                            </header>
+                            <p>A TikTok sensation, this rom-com about a young woman who agrees to fake date a colleague
+                                and bring him to her sister’s wedding has “everything you could want in a romance”
+                                (Helen Hoang, New York Times bestselling author).</p>
+                            <h5>75EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/romance/b2.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Reminders of Him</h4>
+                                <span>book by Colleen Hoover</span>
+                            </header>
+                            <p> A troubled young mother yearns for a shot at redemption in this heartbreaking yet
+                                hopeful story from #1 New York Times bestselling author Colleen Hoover.</p>
+                            <h5>60EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/romance/b3.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Book Lovers</h4>
+                                <span>Book by Emily Henry</span>
+                            </header>
+                            <p>“Book Lovers is the perfect title for this utterly romantic read featuring two book
+                                industry insiders with crackling chemistry. Heartfelt, funny, and full of joy, Emily
+                                Henry’s latest is packed with surprising twists and turns that keep you rooting for Nora
+                                and Charlie, every step of the way. (Also, three cheers for Nora’s super-relatable bangs
+                                journey!)”</p>
+                            <h5>50EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/romance/b4.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>November 9</h4>
+                                <span>Novel by Colleen Hoover</span>
+                            </header>
+                            <p>
+                                November 9 is a standalone contemporary romance novel. Beloved #1 New York Times
+                                bestselling author Colleen Hoover returns with an unforgettable love story between a
+                                writer and his unexpected muse.
+                            </p>
+                            <h5>100EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/romance/b5.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Me Before You</h4>
+                                <span>Novel by Jojo Moyes</span>
+                            </header>
+                            <p>The Me Before You Trilogy follows the story of Louisa Clark through love, heartbreak, and
+                                life-changing decisions as she discovers who she really is. </p>
+                            <h5>55EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Self-help books -->
+            <div id="self-help" class="sections">
+                <h2>Self-Help</h2>
+                <p>Whether the focus is on emotional well-being, finances, or spirituality, self-help books center on
+                    encouraging personal improvement and confidence in a variety of facets of your life.</p>
+                <div class="container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/Self-help/b1.png" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>The 7 Habits of Highly Effective People</h4>
+                                <span>
+                                    Book by Stephen Covey
+                                </span>
+                            </header>
+                            <p> The 7 Habits of Highly Effective People is a business and self-help book written by
+                                Stephen R. Covey. Covey presents an approach to being effective in attaining goals by
+                                aligning oneself to what he calls "true north" principles.</p>
+                            <h5>75EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/Self-help/b2.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>The Power of Now</h4>
+                                <span>Book by Eckhart Tolle</span>
+                            </header>
+                            <p> The Power of Now: A Guide to Spiritual Enlightenment is a book by Eckhart Tolle. It
+                                presents itself as a discussion about how people interact with themselves and others.
+                                The concept of self reflection and presence in the moment are presented along with
+                                simple exercises for the achievement of its principles.</p>
+                            <h5>60EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/Self-help/b3.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>The 4-Hour Workweek</h4>
+                                <span> Book by Tim Ferriss</span>
+                            </header>
+                            <p>The 4-Hour Workweek: Escape 9–5, Live Anywhere, and Join the New Rich is a self-help book
+                                by Timothy Ferriss, an American writer, educational activist, and entrepreneur. </p>
+                            <h5>50EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/Self-help/b4.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>The Power of Positive Thinking</h4>
+                                <span>Book by Norman Vincent Peale</span>
+                            </header>
+                            <p>
+                                An international bestseller with over five million copies in print, The Power of
+                                Positive Thinking has helped men and women around the world to achieve fulfillment in
+                                their lives through Dr. Norman Vincent Peale’s powerful message of faith and
+                                inspiration.
+                            </p>
+                            <h5>100EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/Self-help/b5.jpg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Rich Dad Poor Dad</h4>
+                                <span>Book by Robert Kiyosaki and Sharon Lechter</span>
+                            </header>
+                            <p>Rich Dad Poor Dad is a 1997 book written by Robert T. Kiyosaki and Sharon Lechter. It
+                                advocates the importance of financial literacy, financial independence and building
+                                wealth through investing in assets, real estate investing, starting and owning
+                                businesses, as well as increasing one's financial intelligence.</p>
+                            <h5>55EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/Self-help/b7.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>The 5 AM Club</h4>
+                                <span>
+                                    Book by Robin Sharma
+                                </span>
+                            </header>
+                            <p>
+                                Legendary leadership and elite performance expert Robin Sharma introduced The 5am Club
+                                concept over twenty years ago, based on a revolutionary morning routine that has helped
+                                his clients maximize their productivity, activate their best health and bulletproof
+                                their serenity in this age of overwhelming complexity.
+                            </p>
+                            <h5>100EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/Self-help/b6.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>The Comfort Book</h4>
+                                <span>Book by Matt Haig</span>
+                            </header>
+                            <p>
+                                A manual of reflections for an increasingly stressful world Nothing is stronger than a
+                                small hope that doesn’t give up.The Comfort Book is a collection of little islands of
+                                hope, a gathering of consolations and stories that give us new ways of seeing ourselves
+                                and the world.
+                            </p>
+                            <h5>100EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/Self-help/b9.png" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>How to win friends and influence people. How to stop worrying and start living</h4>
+                                <span>Book by Dale Carnegie</span>
+                            </header>
+                            <p>
+                                Over 30 million copies have been sold worldwide, making it one of the best-selling books
+                                of all time. Carnegie had been conducting business education courses in New York since
+                                1912.
+                            </p>
+                            <h5>100EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/Self-help/b8.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>101 Essays That Will Change the Way You Think</h4>
+                                <span>Book by Brianna Wiest</span>
+                            </header>
+                            <p>
+                                In her second compilation of published writing, Brianna Wiest explores pursuing purpose
+                                over passion, embracing negative thinking, seeing the wisdom in daily routine, and
+                                becoming aware of the cognitive biases that are creating the way you see your life.
+                            </p>
+                            <h5>100EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--History books -->
+            <div id="history" class="sections">
+                <h2>History</h2>
+                <p>These books chronicle and layout a specific moment in time, with a goal to educate and inform the
+                    reader, looking at all parts of the world at any given moment.</p>
+                <div class="container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/History/b1.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Guns, Germs, and Steel</h4>
+                                <span>Book by Jared Diamond</span>
+                            </header>
+                            <p>Guns, Germs, and Steel: The Fates of Human Societies is a 1997 transdisciplinary
+                                non-fiction book by Jared Diamond. In 1998, it won the Pulitzer Prize for general
+                                nonfiction and the Aventis Prize for Best Science Book.</p>
+                            <h5>80EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/History/b2.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>The History of the Ancient World: From the Earliest Accounts to the Fall of Rome
+                                </h4>
+                                <span>Book by Susan Wise Bauer</span>
+                            </header>
+                            <p>
+                                A lively and engaging narrative history showing the common threads in the cultures that
+                                gave birth to our own.</p>
+                            <h5>100EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/History/b3.jpg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4> Egyptian Mythology</h4>
+                                <span>Book by Geraldine Harris</span>
+                            </header>
+                            <p>From stories of resurrected mummies and thousand-year-old curses to powerful pharaohs and
+                                the coveted treasures of the Great Pyramids, ancient Egypt has had an unfaltering grip
+                                on the modern imagination</p>
+                            <h5>110EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/History/b4.jpg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Alexander the Great: His Life and His Mysterious Death</h4>
+                                <span>Book by Anthony Everitt</span>
+                            </header>
+                            <p>An acclaimed biographer reconstructs the life of Alexander the Great in this magisterial
+                                revisionist portrait.</p>
+                            <h5>120EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Action books -->
+            <div id="action" class="sections">
+                <h2>Action and Adventure</h2>
+                <p>Action and adventure books constantly have you on the edge of your seat with excitement, as your fave
+                    main character repeatedly finds themselves in high stakes situations. The protagonist has an
+                    ultimate goal to achieve and is always put in risky, often dangerous situations.</p>
+                <div class="container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/Action/b1.jpg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Harry Potter and the Philosopher's Stone</h4>
+                                <span>Novel by J. K. Rowling</span>
+                            </header>
+                            <p>Harry Potter and the Philosopher's Stone is a 1997 fantasy novel written by British
+                                author J. K. Rowling.</p>
+                            <h5>80EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/Action/b2.jpg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>The Hunger Games</h4>
+                                <span>Novel by Suzanne Collins</span>
+                            </header>
+                            <p>
+                                The Hunger Games is a 2008 dystopian novel by the American writer Suzanne Collins. It is
+                                written in the perspective of 16-year-old Katniss Everdeen, who lives in the future,
+                                post-apocalyptic nation of Panem in North America.
+                            </p>
+                            <h5>100EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/Action/b3.jpg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>The Gate Keeper</h4>
+                                <span>Novel by James Byrne</span>
+                            </header>
+                            <p>In this “brave and heartbreaking novel that digs its claws into you and doesn’t let go,
+                                long after you’ve finished it” (Anna Todd, New York Times bestselling author) from the
+                                #1 New York Times bestselling author of All Your Perfects, a workaholic with a
+                                too-good-to-be-true romance can’t stop thinking about her first love.</p>
+                            <h5>110EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/Action/b4.jpg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Life of Pi</h4>
+                                <span>Novel by Yann Martel</span>
+                            </header>
+                            <p>The protagonist is Piscine Molitor "Pi" Patel, an Indian boy from Pondicherry who
+                                explores issues of spirituality and metaphysics from an early age. </p>
+                            <h5>120EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/Action/b5.jpeg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Harry Potter and the Prisoner of Azkaban</h4>
+                                <span>Novel by J. K. Rowling</span>
+                            </header>
+                            <p>Harry Potter and the Prisoner of Azkaban is a fantasy novel written by British author J.
+                                K. Rowling and is the third in the Harry Potter series. The book follows Harry Potter, a
+                                young wizard, in his third year at Hogwarts School of Witchcraft and Wizardry.</p>
+                            <h5>120EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- DVD -->
+            <div id="movies&tv" class="sections">
+                <h2>Movies and TV</h2>
+                <p>Enjoy your weekend with your favourite DVDs.</p>
+                <div class="container">
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/DVD/d1.jpg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Alexander and the Terrible, Horrible, No Good, Very Bad Day</h4>
+                                <span>2014 ‧ Comedy/Family ‧ 1h 21m</span>
+                            </header>
+                            <p>When Alexander goes through a string of bad experiences, his family reacts nonchalantly.
+                                On the night of his birthday, he makes a wish for them to be more sympathetic but things
+                                soon turn chaotic.</p>
+                            <h5>80EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/DVD/d2.jpg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Jumanji: The Next Level</h4>
+                                <span>
+                                    2019 ‧ Adventure/Comedy ‧ 2h 3m
+                                </span>
+                            </header>
+                            <p>
+                                When Spencer goes missing, the gang returns to Jumanji to travel unexplored territories
+                                and help their friend escape the world's most dangerous game.
+                            </p>
+                            <h5>100EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/DVD/d3.jpg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Avengers: Age of Ultron</h4>
+                                <span>
+                                    2015 ‧ Action/Adventure ‧ 2h 21m
+                                </span>
+                            </header>
+                            <p>Tony Stark builds an artificial intelligence system named Ultron with the help of Bruce
+                                Banner. When the sentient Ultron makes plans to wipe out the human race, the Avengers
+                                set out to stop him.</p>
+                            <h5>110EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="front">
+                            <img src="images/DVD/d4.jpg" />
+                        </div>
+                        <div class="description">
+                            <header>
+                                <h4>Ahwak</h4>
+                                <span>
+                                    2015 ‧ Romance/Comedy ‧ 2 hours
+                                </span>
+                            </header>
+                            <p>From the producers of the smash hit trilogy OMAR WA SALMA comes their new film featuring
+                                Egyptian heartthrob TAMER HOSNY who plays Dr. Sherif, a prominent plastic surgeon who
+                                falls head-over-heels for one of his patients.</p>
+                            <h5>120EGP</h5>
+                            <input type="button" value="Add to Cart" onclick=" Added()" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <section class="container">
+            <div class="footer-left">
+                <h3>Library Open Hours</h3>
+                <p class="hours">
+                    MON 9AM - 5PM<br>
+                    TUE 9AM - 5PM<br>
+                    WED 9AM - 5PM<br>
+                    THU 9AM - 5PM<br>
+                    FRI off-day<br>
+                    SAT off-day<br>
+                </p>
+
+            </div>
+            <div class="footer-center">
+                <div>
+                    <ion-icon name="location-outline"></ion-icon><span> Cairo</span>, Egypt
+                </div>
+                <div>
+                    <ion-icon name="call-outline"></ion-icon> +20123456789
+                </div>
+                <div>
+                    <ion-icon name="mail-outline"></ion-icon> xyz@mail.com
+                </div>
+            </div>
+            <div class="newsletter">
+                <div class="newstext">
+                    <h4>Sign Up For Newsletters</h4>
+                    <p>Get E-mail updates about our latest books, events and special offers</p>
+                </div>
+                <div class="form">
+                    <input type="email" placeholder="Your email address">
+                    <button>Sign Up</button>
+                </div>
+            </div>
+        </section>
+        <section class="bottom">
+            <p class="copyright">Copyright © 2022 All rights deserved</p>
+        </section>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="shop.js"></script>
+</body>
+
+</html>

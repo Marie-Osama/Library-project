@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Project Web Developement </title>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Project Web Developement </title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-         @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Red+Hat+Display:wght@300&family=Shadows+Into+Light&display=swap');
-         *{
-        margin:0; 
-        padding: 0;
-    }
-    .logo {
+        @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Red+Hat+Display:wght@300&family=Shadows+Into+Light&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo {
             padding-right: 600px;
             font-size: 3em;
             color: rgb(150,62,81);
             font-family: 'Shadows Into Light', cursive;
         }
-        header{
+
+        header {
             display: flex;
             background-color: white;
             width: 100%;
@@ -31,71 +34,77 @@
             left: 0;
             z-index: 999;
         }
-        .navigation{
+
+        .navigation {
             width: 100%;
             height: 60px;
             background: white;
             position: relative;
             display: flex;
-            justify-content:center;
+            justify-content: center;
             align-items: center;
             padding-top: 5px;
             padding-bottom: 10px;
         }
 
-        .navigation ul {
-            display: flex;
-            width: 500px;
-           
-        }
-        .navigation ul li{
-            position: relative;
-            list-style: none;
-            width: 70px;
-            height: 50px;
-            z-index: 1;
-        }
-        .navigation ul li a{
-            position: relative;
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            width: 100%;
-            text-align: center;
-            font-weight: 500;
+            .navigation ul {
+                display: flex;
+                width: 500px;
+            }
 
-        }
-        .navigation ul li a .icon{
-            position: relative;
-            display: block;
-            line-height: 75px;
-            font-size: 1.5em;
-            text-align: center;
-            transition: 0.5s;
-            color:#501a1a;
-        }
-        .navigation ul li.active a .icon {
-            transform: translateY(-20px);
-        }
-        .navigation ul li a .text {
-            position: absolute;
-            color:#501a1a;
-            font-weight: 400;
-            font-size: 0.75em;
-            letter-spacing: 0.05em;
-            transition: 0.5s;
-            opacity: 0;
-            transform: translateY(15px);
-        }
-        .navigation ul li:hover a .text{
-            opacity: 1;
-        }
-        .navigation ul li.active a .text{
-            opacity: 1;
-            transform: translateY(5px);
+                .navigation ul li {
+                    position: relative;
+                    list-style: none;
+                    width: 70px;
+                    height: 50px;
+                    z-index: 1;
+                }
 
-        }
+                    .navigation ul li a {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        width: 100%;
+                        text-align: center;
+                        font-weight: 500;
+                    }
+
+                        .navigation ul li a .icon {
+                            position: relative;
+                            display: block;
+                            line-height: 75px;
+                            font-size: 1.5em;
+                            text-align: center;
+                            transition: 0.5s;
+                            color: #501a1a;
+                        }
+
+                    .navigation ul li.active a .icon {
+                        transform: translateY(-20px);
+                    }
+
+                    .navigation ul li a .text {
+                        position: absolute;
+                        color: #501a1a;
+                        font-weight: 400;
+                        font-size: 0.75em;
+                        letter-spacing: 0.05em;
+                        transition: 0.5s;
+                        opacity: 0;
+                        transform: translateY(15px);
+                    }
+
+                    .navigation ul li:hover a .text {
+                        opacity: 1;
+                    }
+
+                    .navigation ul li.active a .text {
+                        opacity: 1;
+                        transform: translateY(5px);
+                    }
+
         .indicator {
             position: absolute;
             top: 0%;
@@ -105,155 +114,178 @@
             border-radius: 50%;
             transition: 0.5s;
         }
-        .indicator::before{
-            content: '';
-            position: absolute;
-            top: 0%;
-            left: -22px;
-            width: 20px;
-            height: 20px;
-            background : transparent;
-        }
-        .indicator::after{
-            content: '';
-            position: absolute;
-            top: 0%;
-            right: -22px;
-            width: 20px;
-            height: 20px;
-            background : transparent;
-        }
-        .navigation ul li:nth-child(1).active ~ .indicator{
+
+            .indicator::before {
+                content: '';
+                position: absolute;
+                top: 0%;
+                left: -22px;
+                width: 20px;
+                height: 20px;
+                background: transparent;
+            }
+
+            .indicator::after {
+                content: '';
+                position: absolute;
+                top: 0%;
+                right: -22px;
+                width: 20px;
+                height: 20px;
+                background: transparent;
+            }
+
+        .navigation ul li:nth-child(1).active ~ .indicator {
             transform: translateX(calc(1px * -0));
         }
-        .navigation ul li:nth-child(2).active ~ .indicator{
+
+        .navigation ul li:nth-child(2).active ~ .indicator {
             transform: translateX(calc(70px * 1));
         }
-        .navigation ul li:nth-child(3).active ~ .indicator{
+
+        .navigation ul li:nth-child(3).active ~ .indicator {
             transform: translateX(calc(70px * 2));
         }
-        .navigation ul li:nth-child(4).active ~ .indicator{
+
+        .navigation ul li:nth-child(4).active ~ .indicator {
             transform: translateX(calc(70px * 3));
         }
-        .navigation ul li:nth-child(5).active ~ .indicator{
+
+        .navigation ul li:nth-child(5).active ~ .indicator {
             transform: translateX(calc(70px * 4));
-        } 
-        .navigation ul li:nth-child(6).active ~ .indicator{
+        }
+
+        .navigation ul li:nth-child(6).active ~ .indicator {
             transform: translateX(calc(70px * 5));
         }
-        .navigation ul li:nth-child(7).active ~ .indicator{
+
+        .navigation ul li:nth-child(7).active ~ .indicator {
             transform: translateX(calc(70px * 6));
         }
-    .banner{
-        position: relative;
-        width: 90%;
-        margin: 0 auto;
-    }
-    .banner img{
-        width: 100%;
-    }
-    .heading{
-        color:lightsalmon;
-        position: absolute;
-        top: 5%; 
-        width: 100%; 
-        text-align: center;
-        font-size:70px;
-    }
-    .banner h3{
-        color:rgb(143, 8, 35);
-        position:absolute;
-        top:30%;
-        width: 100%;
-        text-align:left;
-        font-size: 25px;
-        padding: 15px 300px;
-        line-height: 1;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    .banner p{
-        color:midnightblue;
-        position:absolute;
-        top:38%;
-        width: 100%;
-        text-align:left;
-        font-size: 19px;
-        padding: 15px 245px;
-        line-height: 0.8;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    .m{
-        width: 30%;
-        position: absolute;
-        top: 50%;
-        padding: 105px 230px;
-    }
-    .miss{
-        width: 30%;
-        position: absolute;
-        top: 50%;
-        padding:0 2130px 113px 630px;
-        top: 250px;
-    }
-    .ban p{
-        color:midnightblue;
-        position:absolute;
-        top: 62%;
-        width: 100%;
-        text-align:right;
-        font-size: 19px;
-        line-height: 0.8;
-        right:-40px;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    #butt{
-        position:absolute;
-        top: 95%;
-        width: 100%;
-        text-align:right;
-        right: 39px;
-    }
-    #butt button{
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 23px;
-        color: cornflowerblue;
-        font-weight: 300;
-        background-color:cornsilk;   
-        box-sizing: border-box;
-        border-color:brown ; 
-        height: 5vh;
-    }
-    #but{
-        position:absolute;
-        top: 95%;
-        width: 100%;
-        text-align:right;
-        right: 189px;
-    }
-    #but button{
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 23px;
-        color: cornflowerblue;
-        font-weight: 300;
-        background-color:cornsilk;   
-        box-sizing: border-box;
-        border-color:brown ; 
-        height: 5vh;
-    }
-    footer {
-                position: static;
-                bottom: 0;
-                display: flex;
-                flex-direction: column;
-                background-image: url("Images for Web Design/b14.png");
-                background-position: 20% 30%;
-                background-color: #501a1a;
+
+        .banner {
+            position: relative;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+            .banner img {
                 width: 100%;
-                padding: 10px;
-                margin-top: 10px;
-                font-family: 'Poppins', sans-serif;
-                box-sizing: border-box;
             }
+
+        .heading {
+            color: lightsalmon;
+            position: absolute;
+            top: 5%;
+            width: 100%;
+            text-align: center;
+            font-size: 70px;
+        }
+
+        .banner h3 {
+            color: rgb(143, 8, 35);
+            position: absolute;
+            top: 30%;
+            width: 100%;
+            text-align: left;
+            font-size: 25px;
+            padding: 15px 300px;
+            line-height: 1;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .banner p {
+            color: midnightblue;
+            position: absolute;
+            top: 38%;
+            width: 100%;
+            text-align: left;
+            font-size: 19px;
+            padding: 15px 245px;
+            line-height: 0.8;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .m {
+            width: 30%;
+            position: absolute;
+            top: 50%;
+            padding: 105px 230px;
+        }
+
+        .miss {
+            width: 30%;
+            position: absolute;
+            top: 50%;
+            padding: 0 2130px 113px 630px;
+            top: 250px;
+        }
+
+        .ban p {
+            color: midnightblue;
+            position: absolute;
+            top: 62%;
+            width: 100%;
+            text-align: right;
+            font-size: 19px;
+            line-height: 0.8;
+            right: -40px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #butt {
+            position: absolute;
+            top: 95%;
+            width: 100%;
+            text-align: right;
+            right: 39px;
+        }
+
+            #butt button {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 23px;
+                color: cornflowerblue;
+                font-weight: 300;
+                background-color: cornsilk;
+                box-sizing: border-box;
+                border-color: brown;
+                height: 5vh;
+            }
+
+        #but {
+            position: absolute;
+            top: 95%;
+            width: 100%;
+            text-align: right;
+            right: 189px;
+        }
+
+            #but button {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 23px;
+                color: cornflowerblue;
+                font-weight: 300;
+                background-color: cornsilk;
+                box-sizing: border-box;
+                border-color: brown;
+                height: 5vh;
+            }
+
+        footer {
+            position: static;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            background-image: url("Images for Web Design/b14.png");
+            background-position: 20% 30%;
+            background-color: #501a1a;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
             footer .container {
                 width: 100%;
                 display: flex;
@@ -261,56 +293,64 @@
                 margin-bottom: 2px;
                 height: 200px;
             }
-            .footer-left {
-                flex-grow: 1;
-                margin:10px;
-                flex-basis: 30%;
-            }
-            .footer-center {
-                margin: 10px;
-                flex-grow: 1;
-                flex-basis: 30%;
-                text-align: center;
-                font-size: 20px;
-                padding: 20px;
-                color: white;
-            }
 
-            footer .bottom {
-                text-align: center;    
-                color: black; 
-            }
-            .footer-left h3 {
-                padding: 4px;
-                letter-spacing: 1px;
-                text-align: center; 
-                font-size: 22px;
-                color: rgb(150,62,81);     
-            }
-            .hours {
-                padding: 4px;
-                text-align: center;
-                color: white;
-            }
-            .newsletter{
-                margin: 10px;
-                padding: 10px;
-                flex-grow: 1;
-                text-align: center;
-                justify-content: center;
-                flex-basis: 60%;
-            }
-            .newsletter h4{
+        .footer-left {
+            flex-grow: 1;
+            margin: 10px;
+            flex-basis: 30%;
+        }
+
+        .footer-center {
+            margin: 10px;
+            flex-grow: 1;
+            flex-basis: 30%;
+            text-align: center;
+            font-size: 20px;
+            padding: 20px;
+            color: white;
+        }
+
+        footer .bottom {
+            text-align: center;
+            color: black;
+        }
+
+        .footer-left h3 {
+            padding: 4px;
+            letter-spacing: 1px;
+            text-align: center;
+            font-size: 22px;
+            color: rgb(150,62,81);
+        }
+
+        .hours {
+            padding: 4px;
+            text-align: center;
+            color: white;
+        }
+
+        .newsletter {
+            margin: 10px;
+            padding: 10px;
+            flex-grow: 1;
+            text-align: center;
+            justify-content: center;
+            flex-basis: 60%;
+        }
+
+            .newsletter h4 {
                 font-size: 22px;
                 font-weight: 700;
                 color: #fff;
             }
-            .newsletter p{
+
+            .newsletter p {
                 font-size: 14px;
                 font-weight: 600;
                 color: #f1dbdb;
             }
-            .newsletter input{
+
+            .newsletter input {
                 height: 30px;
                 padding: 0 10px;
                 font-size: 14px;
@@ -318,162 +358,168 @@
                 border-radius: 4px;
                 outline: none;
             }
-            .newsletter button{
+
+            .newsletter button {
                 background-color: #088178;
                 color: white;
                 white-space: nowrap;
                 border: 0px;
             }
-            .newsletter .form{
+
+            .newsletter .form {
                 display: flex;
                 justify-content: center;
-                align-items: center; 
+                align-items: center;
             }
     </style>
-    </head>
-    <body>
-        <header>
-            <div class="navigation">
-                <div class="logo"><img src="logo.svg" alt="">E-Lib</div>
-                <ul>
-                    <li class="list">
-                        <a href="home.html">
-                            <span class="icon">
-                                <ion-icon name="home-outline"></ion-icon>
-                            </span>
-                            <span class="text">Home</span>
-                        </a>
-                    </li>
-                    <li class="list">
-                        <a href="shop.html">
-                            <span class="icon">
-                             <ion-icon name="bag-outline"></ion-icon>
-                            </span>
-                            <span class="text">Shop</span>
-                        </a>
-                    </li>
-                    <li class="list">
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="calendar-outline"></ion-icon>
-                            </span>
-                            <span class="text">Events</span>
-                        </a>
-                    </li>
-                    <li class="list active">
-                        <a href="about page.html">
-                            <span class="icon">
-                                <ion-icon name="information-circle-outline"></ion-icon>
-                            </span>
-                            <span class="text">About</span>
-                        </a>
-                    </li>
-                    <li class="list">
-                        <a href="contact us page.html">
-                            <span class="icon">
-                                <ion-icon name="call-outline"></ion-icon>
-                            </span>
-                            <span class="text">Contact us</span>
-                        </a>
-                    </li>
-                    <li class="list">
-                        <a href="Registration Form.html">
-                            <span class="icon">
-                                <ion-icon name="person-outline"></ion-icon>
-                            </span>
-                            <span class="text">Log in / Sign up</span>
-                        </a>
-                    </li>
-                    <li class="list">
-                        <a href="#">
-                            <span class="icon">
-                                <ion-icon name="cart-outline"></ion-icon>
-                            </span>
-                            <span class="text">Cart</span>
-                        </a>
-                    </li>
-                    <div class="indicator"></div>
-                </ul>
-            </div>
-         </header>
-        <div class="container">
-            <div class="banner">
-                <a href="#"><img src="background 2.jpg" alt=""></a>
-                <h2 class="heading">ABOUT US</h2>
-                <h3>Elib Vision</h3>
-                <p>We provide well-equipped and functional<br></br> 
-                    physical spaces where students can pursue <br></br> 
-                    independent learning and discovery outside <br></br>
-                    the classroom and we support scholarship <br></br>
-                    & research productivity & foster their vitality</p>
-                     <div class="m">
-                     <img src="vision 1.jpg" alt="">
-                    </div>
-                    <div class="miss">
-                        <img src="vision 2.jpg" alt="">
-                    </div>
-                    <div class="ban">
-                    <p>We develop, organize, provide access to and <br></br>
-                        preserve materials to meet needs of present <br></br> 
-                        & future generations of students. We explore<br></br>
-                         and implement technologies and services to<br></br> 
-                         deliver information and scholarly resources <br></br>
-                         conveniently to users anytime & anyplace.</p>
-                        </div>
-                        <section id="butt">
-                            <a href="about 3.html">
-                            <button>Read More</button>
-                            </a>
-                        </section>
-                        <section id="but">
-                            <a href="about page.html">
-                            <button>Go Back</button>
-                            </a>
-                        </section>
-            </div>
+</head>
+<body>
+    <header>
+        <div class="navigation">
+            <div class="logo"><img src="logo.svg" alt="">E-Lib</div>
+            <ul>
+                <li class="list">
+                    <a href="home.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="shop_page.html">
+                        <span class="icon">
+                            <ion-icon name="bag-outline"></ion-icon>
+                        </span>
+                        <span class="text">Shop</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="events.html">
+                        <span class="icon">
+                            <ion-icon name="calendar-outline"></ion-icon>
+                        </span>
+                        <span class="text">Events</span>
+                    </a>
+                </li>
+                <li class="list active">
+                    <a href="about.html">
+                        <span class="icon">
+                            <ion-icon name="information-circle-outline"></ion-icon>
+                        </span>
+                        <span class="text">About</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="contact us page.html">
+                        <span class="icon">
+                            <ion-icon name="call-outline"></ion-icon>
+                        </span>
+                        <span class="text">Contact us</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="Registration Form.html">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <span class="text">Log in / Sign up</span>
+                    </a>
+                </li>
+                <li class="list" onclick="save()">
+                    <a href="cart.html">
+                        <span class="icon">
+                            <ion-icon name="cart-outline"></ion-icon>
+                        </span>
+                        <span class="text">Cart</span>
+                    </a>
+                </li>
+                <div class="indicator"></div>
+            </ul>
         </div>
-        <footer>
-            <section class="container">
-                <div class="footer-left">
-                    <h3>Library Open Hours</h3>
-                    <p class="hours">
-                        MON 9AM - 5PM<br>
-                        TUE 9AM - 5PM<br>
-                        WED 9AM - 5PM<br>
-                        THU 9AM - 5PM<br>
-                        FRI off-day<br>
-                        SAT off-day<br>
-                    </p>
-                    
-                </div>
-                <div class="footer-center">
-                    <div>
-                        <ion-icon name="location-outline"></ion-icon><span> Cairo</span>, Egypt 
-                    </div>
-                    <div>
-                      <ion-icon name="call-outline"></ion-icon> +20123456789
-                    </div>
-                    <div>
-                        <ion-icon name="mail-outline"></ion-icon> xyz@mail.com
-                    </div>
-                </div>
-                <div class="newsletter">
-                    <div class="newstext">
-                        <h4>Sign Up For Newsletters</h4>
-                        <p>Get E-mail updates about our latest books, events and special offers</p>
-                    </div>
-                    <div class="form">
-                        <input type="email" placeholder="Your email address">
-                        <button>Sign Up</button>
-                    </div>
-                </div>
+    </header>
+
+    <div class="container">
+        <div class="banner">
+            <a href="#"><img src="images/about/background 2.jpg" alt=""></a>
+            <h2 class="heading">ABOUT US</h2>
+            <h3>Elib Vision</h3>
+            <p>
+                We provide well-equipped and functional<br></br>
+                physical spaces where students can pursue <br></br>
+                independent learning and discovery outside <br></br>
+                the classroom and we support scholarship <br></br>
+                & research productivity & foster their vitality
+            </p>
+            <div class="m">
+                <img src="images/about/vision 1.jpg" alt="">
+            </div>
+            <div class="miss">
+                <img src="images/about/vision 2.jpg" alt="">
+            </div>
+            <div class="ban">
+                <p>
+                    We develop, organize, provide access to and <br></br>
+                    preserve materials to meet needs of present <br></br>
+                    & future generations of students. We explore<br></br>
+                    and implement technologies and services to<br></br>
+                    deliver information and scholarly resources <br></br>
+                    conveniently to users anytime & anyplace.
+                </p>
+            </div>
+            <section id="butt">
+                <a href="about 3.html">
+                    <button>Read More</button>
+                </a>
             </section>
-                <section class="bottom">
-                    <p class="copyright">Copyright © 2022 All rights deserved</p>
-                </section>
-            </footer>
-            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    </body>
-    </html>
- 
+            <section id="but">
+                <a href="about.html">
+                    <button>Go Back</button>
+                </a>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <section class="container">
+            <div class="footer-left">
+                <h3>Library Open Hours</h3>
+                <p class="hours">
+                    MON 9AM - 5PM<br>
+                    TUE 9AM - 5PM<br>
+                    WED 9AM - 5PM<br>
+                    THU 9AM - 5PM<br>
+                    FRI off-day<br>
+                    SAT off-day<br>
+                </p>
+
+            </div>
+            <div class="footer-center">
+                <div>
+                    <ion-icon name="location-outline"></ion-icon><span> Cairo</span>, Egypt
+                </div>
+                <div>
+                    <ion-icon name="call-outline"></ion-icon> +20123456789
+                </div>
+                <div>
+                    <ion-icon name="mail-outline"></ion-icon> xyz@mail.com
+                </div>
+            </div>
+            <div class="newsletter">
+                <div class="newstext">
+                    <h4>Sign Up For Newsletters</h4>
+                    <p>Get E-mail updates about our latest books, events and special offers</p>
+                </div>
+                <div class="form">
+                    <input type="email" placeholder="Your email address">
+                    <button>Sign Up</button>
+                </div>
+            </div>
+        </section>
+        <section class="bottom">
+            <p class="copyright">Copyright � 2022 All rights deserved</p>
+        </section>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

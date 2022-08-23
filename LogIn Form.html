@@ -1,21 +1,24 @@
 <!DOCTYPE html>
-<html> 
-    <head>
+<html>
+<head>
     <title>Log In</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-         @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Red+Hat+Display:wght@300&family=Shadows+Into+Light&display=swap');
-    *{
-        margin:0;
-        padding: 0;
-    }
-    .logo {
+        @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Red+Hat+Display:wght@300&family=Shadows+Into+Light&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo {
             padding-right: 600px;
             font-size: 3em;
             color: rgb(150,62,81);
             font-family: 'Shadows Into Light', cursive;
         }
-        header{
+
+        header {
             display: flex;
             background-color: white;
             width: 100%;
@@ -26,71 +29,77 @@
             left: 0;
             z-index: 999;
         }
-        .navigation{
+
+        .navigation {
             width: 100%;
             height: 60px;
             background: white;
             position: relative;
             display: flex;
-            justify-content:center;
+            justify-content: center;
             align-items: center;
             padding-top: 5px;
             padding-bottom: 10px;
         }
 
-        .navigation ul {
-            display: flex;
-            width: 500px;
-           
-        }
-        .navigation ul li{
-            position: relative;
-            list-style: none;
-            width: 70px;
-            height: 50px;
-            z-index: 1;
-        }
-        .navigation ul li a{
-            position: relative;
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            width: 100%;
-            text-align: center;
-            font-weight: 500;
+            .navigation ul {
+                display: flex;
+                width: 500px;
+            }
 
-        }
-        .navigation ul li a .icon{
-            position: relative;
-            display: block;
-            line-height: 75px;
-            font-size: 1.5em;
-            text-align: center;
-            transition: 0.5s;
-            color:#501a1a;
-        }
-        .navigation ul li.active a .icon {
-            transform: translateY(-20px);
-        }
-        .navigation ul li a .text {
-            position: absolute;
-            color:#501a1a;
-            font-weight: 400;
-            font-size: 0.75em;
-            letter-spacing: 0.05em;
-            transition: 0.5s;
-            opacity: 0;
-            transform: translateY(15px);
-        }
-        .navigation ul li:hover a .text{
-            opacity: 1;
-        }
-        .navigation ul li.active a .text{
-            opacity: 1;
-            transform: translateY(5px);
+                .navigation ul li {
+                    position: relative;
+                    list-style: none;
+                    width: 70px;
+                    height: 50px;
+                    z-index: 1;
+                }
 
-        }
+                    .navigation ul li a {
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        width: 100%;
+                        text-align: center;
+                        font-weight: 500;
+                    }
+
+                        .navigation ul li a .icon {
+                            position: relative;
+                            display: block;
+                            line-height: 75px;
+                            font-size: 1.5em;
+                            text-align: center;
+                            transition: 0.5s;
+                            color: #501a1a;
+                        }
+
+                    .navigation ul li.active a .icon {
+                        transform: translateY(-20px);
+                    }
+
+                    .navigation ul li a .text {
+                        position: absolute;
+                        color: #501a1a;
+                        font-weight: 400;
+                        font-size: 0.75em;
+                        letter-spacing: 0.05em;
+                        transition: 0.5s;
+                        opacity: 0;
+                        transform: translateY(15px);
+                    }
+
+                    .navigation ul li:hover a .text {
+                        opacity: 1;
+                    }
+
+                    .navigation ul li.active a .text {
+                        opacity: 1;
+                        transform: translateY(5px);
+                    }
+
         .indicator {
             position: absolute;
             top: 0%;
@@ -100,150 +109,179 @@
             border-radius: 50%;
             transition: 0.5s;
         }
-        .indicator::before{
-            content: '';
-            position: absolute;
-            top: 0%;
-            left: -22px;
-            width: 20px;
-            height: 20px;
-            background : transparent;
-        }
-        .indicator::after{
-            content: '';
-            position: absolute;
-            top: 0%;
-            right: -22px;
-            width: 20px;
-            height: 20px;
-            background : transparent;
-        }
-        .navigation ul li:nth-child(1).active ~ .indicator{
+
+            .indicator::before {
+                content: '';
+                position: absolute;
+                top: 0%;
+                left: -22px;
+                width: 20px;
+                height: 20px;
+                background: transparent;
+            }
+
+            .indicator::after {
+                content: '';
+                position: absolute;
+                top: 0%;
+                right: -22px;
+                width: 20px;
+                height: 20px;
+                background: transparent;
+            }
+
+        .navigation ul li:nth-child(1).active ~ .indicator {
             transform: translateX(calc(1px * -0));
         }
-        .navigation ul li:nth-child(2).active ~ .indicator{
+
+        .navigation ul li:nth-child(2).active ~ .indicator {
             transform: translateX(calc(70px * 1));
         }
-        .navigation ul li:nth-child(3).active ~ .indicator{
+
+        .navigation ul li:nth-child(3).active ~ .indicator {
             transform: translateX(calc(70px * 2));
         }
-        .navigation ul li:nth-child(4).active ~ .indicator{
+
+        .navigation ul li:nth-child(4).active ~ .indicator {
             transform: translateX(calc(70px * 3));
         }
-        .navigation ul li:nth-child(5).active ~ .indicator{
+
+        .navigation ul li:nth-child(5).active ~ .indicator {
             transform: translateX(calc(70px * 4));
-        } 
-        .navigation ul li:nth-child(6).active ~ .indicator{
+        }
+
+        .navigation ul li:nth-child(6).active ~ .indicator {
             transform: translateX(calc(70px * 5));
         }
-        .navigation ul li:nth-child(7).active ~ .indicator{
+
+        .navigation ul li:nth-child(7).active ~ .indicator {
             transform: translateX(calc(70px * 6));
         }
-    body{
-       background-color: white;
-    }
-    .Login{
-        display:flex;
-       align-items: center;
-       justify-content: center;
-        width: 30%;
-        border: 1px solid rgb(192, 40, 40);
-        border-radius: 10px;
-        padding: 50px;
-        box-shadow: 0px 5px 10px rgb(255, 50, 50);
-        margin-left: 400px;
-    }
-    #form {
-        width:100%;
-    }
-    .Login form span{
-        display: block;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 14px;
-        padding-top: 5px;
-        margin-top: 12px;
-    }
-    .Login form .box{
-        border: 2px solid rgb(252, 173, 173);
-        border-radius: 10px;
-        padding: 10px;
-        width: 100%;
-    }
-    .form-control input:focus{
-        outline: 0;
-        border-color: rgb(255, 115, 115);
-    }
-    .form-control.success input{
-        border-color: green;
-    }
-    .form-control.error input{
-        border-color: red;
-    }
-    .form-control small{
-        color: red;
-        position: absolute;
-        visibility: hidden;
-    }
-    .form-control.error small{
-        visibility: visible;
-    }
-    .Login .checkbox-text{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 9px;
-        margin-bottom: 18px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: small;
-    }
-    #check{
-        accent-color: #4070f4;
-        margin-top: 9px;
-    }
-    .Login a{
-        text-decoration: none;
-        color: blue;
-        margin-top: 10px;
-    }
-    .Login a:hover{
-        text-decoration: underline;
-    }
-    .Login a:visited{
-        color: blueviolet;
-    }
-    #btn{
-       width: 100%;
-       background-color: #c62a2a;
-       color: white;
-       padding: 12px 0px 12px 5px;
-       margin: 8px 0;
-       border: none;
-       border-radius: 4px;
-       letter-spacing: 1px;
-       font-size: 17px;
-    }
-    #btn:hover{
-        background-color: rgb(128, 0, 0);
-        cursor: pointer;
-    }
-    .Login form p{
-        margin-top: 10px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: small;
-    }
-    footer {
-                position: static;
-                bottom: 0;
-                display: flex;
-                flex-direction: column;
-                background-image: url("Images for Web Design/b14.png");
-                background-position: 20% 30%;
-                background-color: #501a1a;
-                width: 100%;
-                padding: 10px;
-                margin-top: 10px;
-                font-family: 'Poppins', sans-serif;
-                box-sizing: border-box;
+
+        body {
+            background-color: white;
+        }
+
+        .Login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30%;
+            border: 1px solid rgb(192, 40, 40);
+            border-radius: 10px;
+            padding: 50px;
+            box-shadow: 0px 5px 10px rgb(255, 50, 50);
+            margin-left: 400px;
+        }
+
+        #form {
+            width: 100%;
+        }
+
+        .Login form span {
+            display: block;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            padding-top: 5px;
+            margin-top: 12px;
+        }
+
+        .Login form .box {
+            border: 2px solid rgb(252, 173, 173);
+            border-radius: 10px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .form-control input:focus {
+            outline: 0;
+            border-color: rgb(255, 115, 115);
+        }
+
+        .form-control.success input {
+            border-color: green;
+        }
+
+        .form-control.error input {
+            border-color: red;
+        }
+
+        .form-control small {
+            color: red;
+            position: absolute;
+            visibility: hidden;
+        }
+
+        .form-control.error small {
+            visibility: visible;
+        }
+
+        .Login .checkbox-text {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 9px;
+            margin-bottom: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: small;
+        }
+
+        #check {
+            accent-color: #4070f4;
+            margin-top: 9px;
+        }
+
+        .Login a {
+            text-decoration: none;
+            color: blue;
+            margin-top: 10px;
+        }
+
+            .Login a:hover {
+                text-decoration: underline;
             }
+
+            .Login a:visited {
+                color: blueviolet;
+            }
+
+        #btn {
+            width: 100%;
+            background-color: #c62a2a;
+            color: white;
+            padding: 12px 0px 12px 5px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            font-size: 17px;
+        }
+
+            #btn:hover {
+                background-color: rgb(128, 0, 0);
+                cursor: pointer;
+            }
+
+        .Login form p {
+            margin-top: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: small;
+        }
+
+        footer {
+            position: static;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            background-image: url("Images for Web Design/b14.png");
+            background-position: 20% 30%;
+            background-color: #501a1a;
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+        }
+
             footer .container {
                 width: 100%;
                 display: flex;
@@ -251,56 +289,64 @@
                 margin-bottom: 2px;
                 height: 200px;
             }
-            .footer-left {
-                flex-grow: 1;
-                margin:10px;
-                flex-basis: 30%;
-            }
-            .footer-center {
-                margin: 10px;
-                flex-grow: 1;
-                flex-basis: 30%;
-                text-align: center;
-                font-size: 20px;
-                padding: 20px;
-                color: white;
-            }
 
-            footer .bottom {
-                text-align: center;    
-                color: black; 
-            }
-            .footer-left h3 {
-                padding: 4px;
-                letter-spacing: 1px;
-                text-align: center; 
-                font-size: 22px;
-                color: rgb(150,62,81);     
-            }
-            .hours {
-                padding: 4px;
-                text-align: center;
-                color: white;
-            }
-            .newsletter{
-                margin: 10px;
-                padding: 10px;
-                flex-grow: 1;
-                text-align: center;
-                justify-content: center;
-                flex-basis: 60%;
-            }
-            .newsletter h4{
+        .footer-left {
+            flex-grow: 1;
+            margin: 10px;
+            flex-basis: 30%;
+        }
+
+        .footer-center {
+            margin: 10px;
+            flex-grow: 1;
+            flex-basis: 30%;
+            text-align: center;
+            font-size: 20px;
+            padding: 20px;
+            color: white;
+        }
+
+        footer .bottom {
+            text-align: center;
+            color: black;
+        }
+
+        .footer-left h3 {
+            padding: 4px;
+            letter-spacing: 1px;
+            text-align: center;
+            font-size: 22px;
+            color: rgb(150,62,81);
+        }
+
+        .hours {
+            padding: 4px;
+            text-align: center;
+            color: white;
+        }
+
+        .newsletter {
+            margin: 10px;
+            padding: 10px;
+            flex-grow: 1;
+            text-align: center;
+            justify-content: center;
+            flex-basis: 60%;
+        }
+
+            .newsletter h4 {
                 font-size: 22px;
                 font-weight: 700;
                 color: #fff;
             }
-            .newsletter p{
+
+            .newsletter p {
                 font-size: 14px;
                 font-weight: 600;
                 color: #f1dbdb;
             }
-            .newsletter input{
+
+            .newsletter input {
                 height: 30px;
                 padding: 0 10px;
                 font-size: 14px;
@@ -308,104 +354,106 @@
                 border-radius: 4px;
                 outline: none;
             }
-            .newsletter button{
+
+            .newsletter button {
                 background-color: #088178;
                 color: white;
                 white-space: nowrap;
                 border: 0px;
             }
-            .newsletter .form{
+
+            .newsletter .form {
                 display: flex;
                 justify-content: center;
-                align-items: center; 
+                align-items: center;
             }
     </style>
-        <body>
-            <header>
-                <div class="navigation">
-                    <div class="logo"><img src="logo.svg" alt="">E-Lib</div>
-                    <ul>
-                        <li class="list">
-                            <a href="home.html">
-                                <span class="icon">
-                                    <ion-icon name="home-outline"></ion-icon>
-                                </span>
-                                <span class="text">Home</span>
-                            </a>
-                        </li>
-                        <li class="list">
-                            <a href="shop.html">
-                                <span class="icon">
-                                 <ion-icon name="bag-outline"></ion-icon>
-                                </span>
-                                <span class="text">Shop</span>
-                            </a>
-                        </li>
-                        <li class="list">
-                            <a href="Events.html">
-                                <span class="icon">
-                                    <ion-icon name="calendar-outline"></ion-icon>
-                                </span>
-                                <span class="text">Events</span>
-                            </a>
-                        </li>
-                        <li class="list">
-                            <a href="about page.html">
-                                <span class="icon">
-                                    <ion-icon name="information-circle-outline"></ion-icon>
-                                </span>
-                                <span class="text">About</span>
-                            </a>
-                        </li>
-                        <li class="list">
-                            <a href="contact us page.html">
-                                <span class="icon">
-                                    <ion-icon name="call-outline"></ion-icon>
-                                </span>
-                                <span class="text">Contact us</span>
-                            </a>
-                        </li>
-                        <li class="list active">
-                            <a href="Registration Form.html">
-                                <span class="icon">
-                                    <ion-icon name="person-outline"></ion-icon>
-                                </span>
-                                <span class="text">Log in / Sign up</span>
-                            </a>
-                        </li>
-                        <li class="list">
-                            <a href="#">
-                                <span class="icon">
-                                    <ion-icon name="cart-outline"></ion-icon>
-                                </span>
-                                <span class="text">Cart</span>
-                            </a>
-                        </li>
-                        <div class="indicator"></div>
-                    </ul>
-                </div>
-             </header>
+    <body>
+        <header>
+            <div class="navigation">
+                <div class="logo"><img src="logo.svg" alt="">E-Lib</div>
+                <ul>
+                    <li class="list">
+                        <a href="home.html">
+                            <span class="icon">
+                                <ion-icon name="home-outline"></ion-icon>
+                            </span>
+                            <span class="text">Home</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="shop_page.html">
+                            <span class="icon">
+                                <ion-icon name="bag-outline"></ion-icon>
+                            </span>
+                            <span class="text">Shop</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="events.html">
+                            <span class="icon">
+                                <ion-icon name="calendar-outline"></ion-icon>
+                            </span>
+                            <span class="text">Events</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="about.html">
+                            <span class="icon">
+                                <ion-icon name="information-circle-outline"></ion-icon>
+                            </span>
+                            <span class="text">About</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="contact us page.html">
+                            <span class="icon">
+                                <ion-icon name="call-outline"></ion-icon>
+                            </span>
+                            <span class="text">Contact us</span>
+                        </a>
+                    </li>
+                    <li class="list active">
+                        <a href="Registration Form.html">
+                            <span class="icon">
+                                <ion-icon name="person-outline"></ion-icon>
+                            </span>
+                            <span class="text">Log in / Sign up</span>
+                        </a>
+                    </li>
+                    <li class="list" onclick="save()">
+                        <a href="cart.html">
+                            <span class="icon">
+                                <ion-icon name="cart-outline"></ion-icon>
+                            </span>
+                            <span class="text">Cart</span>
+                        </a>
+                    </li>
+                    <div class="indicator"></div>
+                </ul>
+            </div>
+        </header>
         <div class="Login">
             <form id="form">
                 <h2 align="center">SIGN IN</h2>
                 <div class="form-control">
-                <span>Email</span>
-                <input type="text"placeholder="Email" class="box" id="email"/><br>
-                <small>Error Message</small>
+                    <span>Email</span>
+                    <input type="text" placeholder="Email" class="box" id="email" /><br>
+                    <small>Error Message</small>
                 </div>
                 <div class="form-control">
-                <span>Password</span>
-                <input type="password"placeholder="password" class="box" id="password"/><br>
-                <small>Error Message</small>
+                    <span>Password</span>
+                    <input type="password" placeholder="password" class="box" id="password" /><br>
+                    <small>Error Message</small>
                 </div>
                 <div class="checkbox-text">
                     <div class="checkbox-content">
-                     <input type="checkbox"id="check"/>
-                     <label for="check">Remember me</label>
+                        <input type="checkbox" id="check" />
+                        <label for="check">Remember me</label>
                     </div>
                     <a href="Forget Password Form.html">Forget password?</a>
                 </div>
-               <input type="submit"value="Sign in"id="btn"/></a><br>
+                <input type="submit" value="Sign in" id="btn" /></a><br>
                 <p>Don't have an account? <a href="Registration Form.html">Sign Up</a></p>
             </form>
         </div>
@@ -421,14 +469,14 @@
                         FRI off-day<br>
                         SAT off-day<br>
                     </p>
-                    
+
                 </div>
                 <div class="footer-center">
                     <div>
-                        <ion-icon name="location-outline"></ion-icon><span> Cairo</span>, Egypt 
+                        <ion-icon name="location-outline"></ion-icon><span> Cairo</span>, Egypt
                     </div>
                     <div>
-                      <ion-icon name="call-outline"></ion-icon> +20123456789
+                        <ion-icon name="call-outline"></ion-icon> +20123456789
                     </div>
                     <div>
                         <ion-icon name="mail-outline"></ion-icon> xyz@mail.com
@@ -445,14 +493,14 @@
                     </div>
                 </div>
             </section>
-                <section class="bottom">
-                    <p class="copyright">Copyright Â© 2022 All rights deserved</p>
-                </section>
-            </footer>
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+            <section class="bottom">
+                <p class="copyright">Copyright © 2022 All rights deserved</p>
+            </section>
+        </footer>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <script>
-            const form = document.getElementById('form'); 
+            const form = document.getElementById('form');
             const userEmail=document.getElementById('email');
             const userPass=document.getElementById('password');
             function setErrorFor(input,message){
@@ -485,7 +533,7 @@
                 form.addEventListener('submit' , (e)=>{
                         e.preventDefault();
                         checkInputs();
-                }); 
+                });
                 function checkInputs(){
                     if(userEmail.value.trim() === ''){
                         setErrorFor(userEmail,"Email is required");
@@ -502,8 +550,8 @@
                         setSuccessFor(userPass);
                         NewPage();
                     }
-                }   
+                }
         </script>
     </body>
-    </head>
+</head>
 </html>

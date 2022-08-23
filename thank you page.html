@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Project Web Developement </title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Red+Hat+Display:wght@300&family=Shadows+Into+Light&display=swap');
 
         * {
-            margin: 0;
             padding: 0;
+            margin: 0;
+        }
+
+        .body {
+            background: #eeeeed;
         }
 
         .logo {
@@ -33,6 +31,7 @@
             top: 0;
             left: 0;
             z-index: 999;
+            font-family: 'Poppins', sans-serif;
         }
 
         .navigation {
@@ -163,113 +162,35 @@
             transform: translateX(calc(70px * 6));
         }
 
-        .banner {
-            position: relative;
-            width: 90%;
-            margin: 0 auto;
-        }
-
-            .banner img {
-                width: 100%;
-            }
-
-        .heading {
-            color: lightsalmon;
-            position: absolute;
-            top: 5%;
-            width: 100%;
+        .popup {
+            margin-top: 10px;
             text-align: center;
-            font-size: 70px;
-        }
-
-        .banner h3 {
-            color: rgb(143, 8, 35);
-            position: absolute;
-            top: 30%;
+            color: #333;
+            position: relative;
+            margin-left: 40%;
+            max-width: 300px;
             width: 100%;
-            text-align: left;
-            font-size: 25px;
-            padding: 15px 300px;
-            line-height: 1;
-            font-family: Arial, Helvetica, sans-serif;
+            background: rgb(248, 249, 248);
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 19px 5px rgba(109, 27, 27, 0.426);
+            height: 201px;
         }
 
-        .banner p {
-            color: midnightblue;
-            position: absolute;
-            top: 38%;
-            width: 100%;
-            text-align: left;
-            font-size: 19px;
-            padding: 15px 245px;
-            line-height: 0.8;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .m {
-            width: 30%;
-            position: absolute;
-            top: 50%;
-            padding: 105px 230px;
-        }
-
-        .miss {
-            width: 30%;
-            position: absolute;
-            top: 50%;
-            padding: 0 2130px 113px 630px;
-            top: 250px;
-        }
-
-        .ban p {
-            color: midnightblue;
-            position: absolute;
-            top: 62%;
-            width: 100%;
-            text-align: right;
-            font-size: 19px;
-            line-height: 0.8;
-            right: -40px;
-            font-family: Arial, Helvetica, sans-serif;
-            justify-self: auto;
-        }
-
-        #butt {
-            position: absolute;
-            top: 95%;
-            width: 100%;
-            text-align: right;
-            right: 39px;
-        }
-
-            #butt button {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 23px;
-                color: cornflowerblue;
-                font-weight: 300;
-                background-color: cornsilk;
-                box-sizing: border-box;
-                border-color: brown;
-                height: 5vh;
+            .popup h1 {
+                font-size: 38px;
+                font-weight: 500;
+                margin: 30px 0 10px;
             }
 
-        #but {
-            position: absolute;
-            top: 95%;
-            width: 100%;
-            text-align: right;
-            right: 189px;
-        }
-
-            #but button {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 23px;
-                color: cornflowerblue;
-                font-weight: 300;
-                background-color: cornsilk;
-                box-sizing: border-box;
-                border-color: brown;
-                height: 5vh;
+            .popup button {
+                background: #6b0d0d;
+                padding: 8px 15px 8px 15px;
+                border: none;
+                color: #fff;
+                box-shadow: none;
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
             }
 
         footer {
@@ -284,7 +205,7 @@
             padding: 10px;
             margin-top: 10px;
             font-family: 'Poppins', sans-serif;
-            box-sizing: border-box;
+            height: 247px;
         }
 
             footer .container {
@@ -293,6 +214,7 @@
                 gap: 20px;
                 margin-bottom: 2px;
                 height: 200px;
+                padding: 0;
             }
 
         .footer-left {
@@ -314,6 +236,10 @@
         footer .bottom {
             text-align: center;
             color: black;
+        }
+
+        section.bottom {
+            padding: 0;
         }
 
         .footer-left h3 {
@@ -403,7 +329,7 @@
                         <span class="text">Events</span>
                     </a>
                 </li>
-                <li class="list active">
+                <li class="list">
                     <a href="about.html">
                         <span class="icon">
                             <ion-icon name="information-circle-outline"></ion-icon>
@@ -411,7 +337,7 @@
                         <span class="text">About</span>
                     </a>
                 </li>
-                <li class="list">
+                <li class="list active">
                     <a href="contact us page.html">
                         <span class="icon">
                             <ion-icon name="call-outline"></ion-icon>
@@ -439,44 +365,11 @@
             </ul>
         </div>
     </header>
-    <div class="container">
-        <div class="banner">
-            <a href="#"><img src="images/about/background 3.jpg" alt=""></a>
-            <h2 class="heading">ABOUT US</h2>
-            <h3>Elib Objective</h3>
-            <p>
-                To maintain and preserve books, materials <br></br>
-                and resources with historical, cultural, social,<br></br>
-                economic and archival value & other related <br></br>
-                materials in organized collection to provide <br></br>
-                members of the community these materials
-            </p>
-            <div class="m">
-                <img src="images/about/objective 1.jpg" alt="">
-            </div>
-            <div class="miss">
-                <img src="images/about/objective 2.jpg" alt="">
-            </div>
-            <div class="ban">
-                <p>
-                    To provide materials and resources that <br></br>
-                    entertain and inspire as well as services <br></br>
-                    offering space for people & information would <br></br>
-                    to come together, and programs that create<br></br>
-                    library awareness and consciousness
-                </p>
-            </div>
-            <section id="butt">
-                <a href="about 4.html">
-                    <button>Read More</button>
-                </a>
-            </section>
-            <section id="but">
-                <a href="about 2.html">
-                    <button>Go Back</button>
-                </a>
-            </section>
-        </div>
+    <div class="popup">
+        <h1>Thank you!</h1>
+        <p>Your message has been suucessfully submitted. Thanks!</p>
+        <a href="home.html"><button type="button">GO TO HOME PAGE</button></a>
+
     </div>
     <footer>
         <section class="container">
@@ -515,12 +408,10 @@
             </div>
         </section>
         <section class="bottom">
-            <p class="copyright">Copyright ï¿½ 2022 All rights deserved</p>
+            <p class="copyright">Copyright © 2022 All rights deserved</p>
         </section>
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
-
-
